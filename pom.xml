@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+	  <groupId>org.sylrsykssoft</groupId>
+	  <artifactId>coreapi-framework</artifactId>
+	  <version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<artifactId>java-musbands-admin</artifactId>
+	<name>java-musbands-admin</name>
+	<packaging>pom</packaging>
+	<description>Demo project for Spring Boot</description>
+	<url>https://github.com/sylarsykes/java-musbands</url>
+	
+	<developers>
+		<developer>
+			<id>juan.gonzalez.fernandez.jgf</id>
+			<name>Juan Gonzalez Fernandez</name>
+			<email>${developer.email}</email>
+			<url>https://github.com/sylarsykes</url>
+		</developer>
+	</developers>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/sylarsykes/coreapi-framework</url>
+		<connection>https://github.com/sylarsykes/coreapi-framework.git</connection>
+		<developerConnection>ps://github.com/sylarsykes</developerConnection>
+	</scm>
+	<!-- Core API Framework -->
+	<repositories>
+		<repository>
+			<id>coreapi-framework</id>
+			<url>https://github.com/sylarsykes/coreapi-framework</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<properties>
+		<!-- Common -->
+		<developer.email>juan.gonzalez.fernandez.jgf@outlook.com</developer.email>
+		<main.basedir>${basedir}</main.basedir>
+		<java.version>11</java.version>
+		<java.version>11</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<maven.compiler.source>${java.version}</maven.compiler.source>
+    	<maven.compiler.target>${java.version}</maven.compiler.target>
+    	<maven.compiler.release>${java.version}</maven.compiler.release>
+		
+		<!-- Core API Dependencies -->
+		<coreapi-framework.library.version>0.0.1-SNAPSHOT</coreapi-framework.library.version>
+		<coreapi-framework.api.version>0.0.1-SNAPSHOT</coreapi-framework.api.version>
+		<coreapi-framework.database.version>0.0.1-SNAPSHOT</coreapi-framework.database.version>
+		<coreapi-framework.service.version>0.0.1-SNAPSHOT</coreapi-framework.service.version>
+		<coreapi-framework.web.version>0.0.1-SNAPSHOT</coreapi-framework.web.version>
+
+		<!-- Musbands Admin Dependencies -->
+	    <java-musbands.admin.musical-genre.version>${project.version}</java-musbands.admin.musical-genre.version>
+	    <java-musbands.admin.function-member.version>${project.version}</java-musbands.admin.function-member.version>
+	    <java-musbands.admin.application.version>${project.version}</java-musbands.admin.application.version>
+		
+		<!-- 3rd Library Dependencies -->
+		<spring-data-rest-core.version>3.1.10.RELEASE</spring-data-rest-core.version>
+		<junit-jupiter.version>5.5.1</junit-jupiter.version>
+		<junit-platform.version>1.5.1</junit-platform.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-rest-core</artifactId>
+		    <version>${spring-data-rest-core.version}</version>
+		</dependency>
+		
+		<!-- Core API Dependencies -->
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.library</artifactId>
+	    	<version>${coreapi-framework.library.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.api</artifactId>
+	    	<version>${coreapi-framework.api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.database</artifactId>
+	    	<version>${coreapi-framework.database.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.service</artifactId>
+	    	<version>${coreapi-framework.service.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.web</artifactId>
+	    	<version>${coreapi-framework.web.version}</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-test</artifactId>
+		  <version>${spring-boot.version}</version>
+		  <scope>test</scope>
+		  <exclusions>
+	          <exclusion>
+	              <groupId>junit</groupId>
+	              <artifactId>junit</artifactId>
+	          </exclusion>
+          </exclusions>
+		</dependency>	 
+		
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+		
+	</dependencies>
+
+	<modules>
+    	<module>java-musbands-admin.musical-genre</module>
+    	<module>java-musbands-admin.client</module>
+    	<!-- <module>java-musbands-admin.application</module> -->
+  	</modules>
+</project>
