@@ -84,6 +84,11 @@
 			<artifactId>java-musbands.admin.musical-genre</artifactId>
 			<version>${java-musbands.admin.musical-genre.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+			<artifactId>java-musbands.admin.function-member</artifactId>
+			<version>${java-musbands.admin.function-member.version}</version>
+		</dependency>
 		
 	</dependencies>
 

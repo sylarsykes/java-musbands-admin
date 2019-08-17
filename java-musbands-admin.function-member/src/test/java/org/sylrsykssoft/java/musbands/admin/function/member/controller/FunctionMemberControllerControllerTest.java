@@ -1,14 +1,14 @@
-package org.sylrsykssoft.java.musbands.admin.musical.genre.controller;
+package org.sylrsykssoft.java.musbands.admin.function.member.controller;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_GET_FIND_ALL_BY_EXAMPLE;
-import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE;
-import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_GET_FIND_BY_EXAMPLE;
-import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_GET_FIND_BY_ID;
-import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_GET_FIND_BY_NAME_MAPPING;
-import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_REQUEST_MAPPING_TEST;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_GET_FIND_ALL_BY_EXAMPLE;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_GET_FIND_BY_EXAMPLE;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_GET_FIND_BY_ID;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_GET_FIND_BY_NAME_MAPPING;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_REQUEST_MAPPING_TEST;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,22 +25,22 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.MusicalGenreApplicationTests;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreTestsConfiguration;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreResource;
+import org.sylrsykssoft.java.musbands.admin.function.member.FunctionMemberApplicationTests;
+import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberTestsConfiguration;
+import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberResource;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Musical genre controller test
+ * Function member controller test
  * 
  * @author juan.gonzalez.fernandez.jgf
  *
  */
-@SpringBootTest(classes = { MusicalGenreApplicationTests.class })
+@SpringBootTest(classes = { FunctionMemberApplicationTests.class })
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = { MusicalGenreTestsConfiguration.class, }, loader = AnnotationConfigContextLoader.class)
-public class MusicalGenreControllerControllerTest {
+@ContextConfiguration(classes = { FunctionMemberTestsConfiguration.class, }, loader = AnnotationConfigContextLoader.class)
+public class FunctionMemberControllerControllerTest {
 
 	public static String asJsonString(final Object obj) {
 		try {
@@ -55,34 +55,33 @@ public class MusicalGenreControllerControllerTest {
 	private MockMvc mockMvc;
 
 	@Autowired
-	MusicalGenreControllerTest musicalGenreController;
+	FunctionMemberControllerTest functionMemberController;
+	FunctionMemberResource domain;
 
-	MusicalGenreResource domain;
-
-	MusicalGenreResource domainForUdpate;
+	FunctionMemberResource domainForUdpate;
 
 	@BeforeEach
 	public void setUp() {
-		mockMvc = MockMvcBuilders.standaloneSetup(musicalGenreController).build();
+		mockMvc = MockMvcBuilders.standaloneSetup(functionMemberController).build();
 
-		final String name = "Punk rock";
-		final String description = "Punk rock (or \"punk\") is a rock music genre that emerged in the mid-1970s in the United States, United Kingdom, and Australia. Rooted in 1960s garage rock and other forms of what is now known as \"proto-punk\" music, punk rock bands rejected perceived excesses of mainstream 1970s rock. They typically produced short, fast-paced songs with hard-edged melodies and singing styles, stripped-down instrumentation, and often political, anti-establishment lyrics. Punk embraces a DIY ethic; many bands self-produce recordings and distribute them through independent record labels. ";
+		final String name = "Lead guitar";
+		final String description = "Lead guitar is a musical part for a guitar in which the guitarist plays melody lines, instrumental fill passages, guitar solos, and occasionally, some riffs within a song structure. The lead is the featured guitar, which usually plays single-note-based lines or double-stops.[1] In rock, heavy metal, blues, jazz, punk, fusion, some pop, and other music styles, lead guitar lines are usually supported by a second guitarist who plays rhythm guitar, which consists of accompaniment chords and riffs.";
 
-		domain = MusicalGenreResource.musicalGenreResourceBuilder().name(name).description(description).build();
+		domain = FunctionMemberResource.functionMemberResourceBuilder().name(name).description(description).build();
 
-		domainForUdpate = MusicalGenreResource.musicalGenreResourceBuilder().entityId(3).name(name).description(description + " erop").build();
+		domainForUdpate = FunctionMemberResource.functionMemberResourceBuilder().entityId(3).name(name).description(description + " erop").build();
 	}
 
 	@Test
-	public void testCreateMusicalGenre() throws Exception {
-		// call POST /admin/musicalGenres/ application/json
+	public void testCreateFunctionMember() throws Exception {
+		// call POST /admin/functionMembers/ application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST)
 				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
 
 		this.mockMvc.perform(postBuilder).andExpect(status().isCreated());
 
-		// call GET /admin/musicalGenres/name/{name} application/json
-		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Punk rock");
+		// call GET /admin/functionMembers/name/{name} application/json
+		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Lead guitar");
 
 		final MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -90,14 +89,14 @@ public class MusicalGenreControllerControllerTest {
 	}
 
 	@Test
-	public void testDeleteMusicalGenre() throws Exception {
-		// call DELETE /admin/musicalGenres/ application/json
-		final MockHttpServletRequestBuilder deleteBuilder = MockMvcRequestBuilders.delete(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_ID, 3);
+	public void testDeleteFunctionMember() throws Exception {
+		// call DELETE /admin/functionMembers/ application/json
+		final MockHttpServletRequestBuilder deleteBuilder = MockMvcRequestBuilders.delete(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_ID, 2);
 
 		this.mockMvc.perform(deleteBuilder).andExpect(status().isOk());
 
-		// call GET /admin/musicalGenres/name/{name} application/json
-		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Punk rock");
+		// call GET /admin/functionMembers/name/{name} application/json
+		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Lead guitar");
 
 		final MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isNotFound()).andDo(print()).andReturn();
 
@@ -107,9 +106,9 @@ public class MusicalGenreControllerControllerTest {
 	@Test
 	public void testFindAll() throws Exception {
 
-		//		when(musicalGenreService.findAll()).thenReturn(Arrays.asList(new MusicalGenreResource()));
+		//		when(FunctionMemberService.findAll()).thenReturn(Arrays.asList(new FunctionMemberResource()));
 
-		// call GET /admin/musicalGenres application/json
+		// call GET /admin/functionMembers application/json
 		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST)
 				.accept(MediaType.APPLICATION_JSON_VALUE);
 
@@ -121,7 +120,7 @@ public class MusicalGenreControllerControllerTest {
 	@Test
 	public void testFindAllByExample() throws Exception {
 
-		// call GET /admin/musicalGenres/name/{name} application/json
+		// call GET /admin/functionMembers/name/{name} application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_ALL_BY_EXAMPLE)
 				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
 
@@ -132,7 +131,7 @@ public class MusicalGenreControllerControllerTest {
 
 	@Test
 	public void testFindAllByExampleSortable() throws Exception {
-		// call GET /admin/musicalGenres/findAll/example/sort application/json
+		// call GET /admin/functionMembers/findAll/example/sort application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE)
 				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain)).param("direction", "asc").param("properties", "name", "description");
 
@@ -144,7 +143,7 @@ public class MusicalGenreControllerControllerTest {
 	@Test
 	public void testFindByExample() throws Exception {
 
-		// call GET /admin/musicalGenres/name/{name} application/json
+		// call GET /admin/functionMembers/name/{name} application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_EXAMPLE)
 				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
 
@@ -155,7 +154,7 @@ public class MusicalGenreControllerControllerTest {
 
 	@Test
 	public void testFindById() throws Exception {
-		// call GET /admin/musicalGenres/{id} application/json
+		// call GET /admin/functionMembers/{id} application/json
 		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_ID, 1);
 
 		final MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
@@ -165,8 +164,8 @@ public class MusicalGenreControllerControllerTest {
 
 	@Test
 	public void testFindByName() throws Exception {
-		// call GET /admin/musicalGenres/name/{name} application/json
-		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Pop punk");
+		// call GET /admin/FunctionMembers/name/{name} application/json
+		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Lead guitar");
 
 		final MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -174,15 +173,15 @@ public class MusicalGenreControllerControllerTest {
 	}
 
 	@Test
-	public void testUpdateMusicalGenre() throws Exception {
-		// call PUT /admin/musicalGenres/ application/json
-		final MockHttpServletRequestBuilder putBuilder = MockMvcRequestBuilders.put(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_ID, 3)
+	public void testUpdateFunctionMember() throws Exception {
+		// call PUT /admin/functionMembers/ application/json
+		final MockHttpServletRequestBuilder putBuilder = MockMvcRequestBuilders.put(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_ID, 2)
 				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domainForUdpate));
 
 		this.mockMvc.perform(putBuilder).andExpect(status().isOk());
 
-		// call GET /admin/musicalGenres/name/{name} application/json
-		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Punk rock");
+		// call GET /admin/functionMembers/name/{name} application/json
+		final RequestBuilder requestBuilder = MockMvcRequestBuilders.get(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_NAME_MAPPING, "Lead guitar");
 
 		final MvcResult result = mockMvc.perform(requestBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
