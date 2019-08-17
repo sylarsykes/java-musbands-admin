@@ -140,5 +140,6 @@
     	<module>java-musbands-admin.musical-genre</module>
     	<module>java-musbands-admin.client</module>
     	<!-- <module>java-musbands-admin.application</module> -->
-  	</modules>
+    <module>java-musbands-admin.function-member</module>
+  </modules>
 </project>
