@@ -70,15 +70,41 @@
 		
 		<!-- 3rd Library Dependencies -->
 		<spring-data-rest-core.version>3.1.10.RELEASE</spring-data-rest-core.version>
+		<mariadb.version>2.3.0</mariadb.version>
 		<junit-jupiter.version>5.5.1</junit-jupiter.version>
 		<junit-platform.version>1.5.1</junit-platform.version>
 	</properties>
 	
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+	  		<version>${spring-boot.version}</version>
+		</dependency>
+		
+		<dependency>
 		    <groupId>org.springframework.data</groupId>
 		    <artifactId>spring-data-rest-core</artifactId>
 		    <version>${spring-data-rest-core.version}</version>
+		</dependency>
+		
+		<dependency>
+	  		<groupId>org.springframework.boot</groupId>
+	  		<artifactId>spring-boot-configuration-processor</artifactId>
+	  		<version>${spring-boot.version}</version>
+	  		<optional>true</optional>
+	  	</dependency>
+	  	
+	  	<dependency>
+	   		<groupId>org.mariadb.jdbc</groupId>
+	   		<artifactId>mariadb-java-client</artifactId>
+	   		<version>${mariadb.version}</version>
+		</dependency>
+	  	
+	  	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+	  		<version>${spring-boot.version}</version>
 		</dependency>
 		
 		<!-- Core API Dependencies -->
@@ -138,8 +164,9 @@
 
 	<modules>
     	<module>java-musbands-admin.musical-genre</module>
+    	<module>java-musbands-admin.function-member</module>
+    	<module>java-musbands-admin.instrument</module>
     	<module>java-musbands-admin.client</module>
     	<!-- <module>java-musbands-admin.application</module> -->
-    <module>java-musbands-admin.function-member</module>
   </modules>
 </project>
