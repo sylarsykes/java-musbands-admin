@@ -43,14 +43,6 @@
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>java-musbands-admin</id>
-			<url>https://github.com/sylarsykes/java-musbands-admin</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</repository>
 	</repositories>
 
 	<properties>
