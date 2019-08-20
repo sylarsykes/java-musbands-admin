@@ -14,7 +14,7 @@
   <packaging>jar</packaging>
   <name>java-musbands.admin.function-member</name>
   <description>Musbands Admin Function Member Rest API</description>
-  <url>https://github.com/sylarsykes/java-musbands-admin/tree/develop/java-musbands.admin.function-member</url>
+  <url>https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands.admin.function-member</url>
 
   <properties>
     <main.basedir>${basedir}/../</main.basedir>

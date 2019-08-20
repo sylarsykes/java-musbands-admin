@@ -23,11 +23,12 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Configuration
 @PropertySource({ "classpath:application.properties", "classpath:logging.properties", "classpath:database.properties" })
-@ComponentScan({ "org.sylrsykssoft.java.musbands.admin.musical.genre.*",
-		"org.sylrsykssoft.java.musbands.admin.function.member.*" })
+@ComponentScan({ "org.sylrsykssoft.java.musbands.admin.function.member.*",
+	"org.sylrsykssoft.java.musbands.admin.instrument.*", "org.sylrsykssoft.java.musbands.admin.musical.genre.*" })
 //@EnableJpaRepositories({
+//	"org.sylrsykssoft.java.musbands.admin.function.member.repository",
+//	"org.sylrsykssoft.java.musbands.admin.instrument.repository",
 //	"org.sylrsykssoft.java.musbands.admin.musical.genre.repository",
-//	"org.sylrsykssoft.java.musbands.admin.function.member.repository"
 //})
 @EnableCaching
 public class MusbandsAdminAplicationConfiguration {

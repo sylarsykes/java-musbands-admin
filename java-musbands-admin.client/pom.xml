@@ -14,22 +14,28 @@
   <packaging>jar</packaging>
   <name>java-musbands.admin.client</name>
   <description>Musbands Admin Musical Genre Rest API</description>
-  <url>https://github.com/sylarsykes/java-musbands-admin/tree/develop/java-musbands.admin.client</url>
+  <url>https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands.admin.client</url>
 
   <properties>
     <main.basedir>${basedir}/../</main.basedir>
   </properties>
 
   <dependencies>
-  	<dependency>
-		<groupId>org.sylrsykssoft</groupId>
-		<artifactId>java-musbands.admin.musical-genre</artifactId>
-		<version>${java-musbands.admin.musical-genre.version}</version>
-	</dependency>
+  	<!-- Musbands Admin Dependencies -->
 	<dependency>
 		<groupId>org.sylrsykssoft</groupId>
 		<artifactId>java-musbands.admin.function-member</artifactId>
 		<version>${java-musbands.admin.function-member.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.sylrsykssoft</groupId>
+		<artifactId>java-musbands.admin.instrument</artifactId>
+		<version>${java-musbands.admin.instrument.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.sylrsykssoft</groupId>
+		<artifactId>java-musbands.admin.musical-genre</artifactId>
+		<version>${java-musbands.admin.musical-genre.version}</version>
 	</dependency>
   </dependencies>
 </project>

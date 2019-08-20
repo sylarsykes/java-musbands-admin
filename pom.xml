@@ -12,11 +12,11 @@
 	<name>java-musbands-admin</name>
 	<packaging>pom</packaging>
 	<description>Demo project for Spring Boot</description>
-	<url>https://github.com/sylarsykes/java-musbands</url>
+	<url>https://github.com/sylarsykes/java-musbands-admin</url>
 	
 	<developers>
 		<developer>
-			<id>juan.gonzalez.fernandez.jgf</id>
+			<id>${developer.id}</id>
 			<name>Juan Gonzalez Fernandez</name>
 			<email>${developer.email}</email>
 			<url>https://github.com/sylarsykes</url>
@@ -47,9 +47,9 @@
 
 	<properties>
 		<!-- Common -->
+		<developer.id>juan.gonzalez.fernandez.jgf</developer.id>
 		<developer.email>juan.gonzalez.fernandez.jgf@outlook.com</developer.email>
 		<main.basedir>${basedir}</main.basedir>
-		<java.version>11</java.version>
 		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     	<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -64,8 +64,10 @@
 		<coreapi-framework.web.version>0.0.1-SNAPSHOT</coreapi-framework.web.version>
 
 		<!-- Musbands Admin Dependencies -->
-	    <java-musbands.admin.musical-genre.version>${project.version}</java-musbands.admin.musical-genre.version>
 	    <java-musbands.admin.function-member.version>${project.version}</java-musbands.admin.function-member.version>
+	    <java-musbands.admin.instrument.version>${project.version}</java-musbands.admin.instrument.version>
+	    <java-musbands.admin.musical-genre.version>${project.version}</java-musbands.admin.musical-genre.version>
+	    <java-musbands.admin.client.version>${project.version}</java-musbands.admin.client.version>
 	    <java-musbands.admin.application.version>${project.version}</java-musbands.admin.application.version>
 		
 		<!-- 3rd Library Dependencies -->
@@ -163,9 +165,9 @@
 	</dependencies>
 
 	<modules>
-    	<module>java-musbands-admin.musical-genre</module>
     	<module>java-musbands-admin.function-member</module>
     	<module>java-musbands-admin.instrument</module>
+    	<module>java-musbands-admin.musical-genre</module>
     	<module>java-musbands-admin.client</module>
     	<!-- <module>java-musbands-admin.application</module> -->
   </modules>
