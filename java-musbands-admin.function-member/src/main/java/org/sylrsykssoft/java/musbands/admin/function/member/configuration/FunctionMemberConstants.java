@@ -8,8 +8,8 @@ package org.sylrsykssoft.java.musbands.admin.function.member.configuration;
  */
 public final class FunctionMemberConstants {
 	// CACHE //
-	public static final String CACHE_NAME = "musbandsAdmin";
-	public static final String CACHE_MANGER_BEAN_NAME = "musbandsAdminCacheManager";
+	public static final String CACHE_NAME = "${musbands.admin.cache.cache-name}";
+	public static final String CACHE_MANGER_BEAN_NAME = "${musbands.admin.cache.cache-manager}";
 
 	// CONTROLLER //
 	public static final String CONTROLLER_NAME = "functionMemberController";
