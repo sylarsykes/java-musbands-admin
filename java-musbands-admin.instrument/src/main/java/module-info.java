@@ -3,15 +3,15 @@
  * 
  * @author juan.gonzalez.fernandez.jgf
  */
-module musbands.admin.function.member {
-	exports org.sylrsykssoft.java.musbands.admin.function.member.configuration;
-	exports org.sylrsykssoft.java.musbands.admin.function.member.controller;
-	exports org.sylrsykssoft.java.musbands.admin.function.member.domain;
-	exports org.sylrsykssoft.java.musbands.admin.function.member.exception;
-	exports org.sylrsykssoft.java.musbands.admin.function.member.repository;
-	exports org.sylrsykssoft.java.musbands.admin.function.member.resource;
-	exports org.sylrsykssoft.java.musbands.admin.function.member.resource.assembler;
-	exports org.sylrsykssoft.java.musbands.admin.function.member.service;
+module musbands.admin.instrument {
+	exports org.sylrsykssoft.java.musbands.admin.instrument.configuration;
+	exports org.sylrsykssoft.java.musbands.admin.instrument.controller;
+	exports org.sylrsykssoft.java.musbands.admin.instrument.domain;
+	exports org.sylrsykssoft.java.musbands.admin.instrument.exception;
+	exports org.sylrsykssoft.java.musbands.admin.instrument.repository;
+	exports org.sylrsykssoft.java.musbands.admin.instrument.resource;
+	exports org.sylrsykssoft.java.musbands.admin.instrument.resource.assembler;
+	exports org.sylrsykssoft.java.musbands.admin.instrument.service;
 
 	requires java.desktop;
 	// Core API Framework Module Dependencies
@@ -32,8 +32,8 @@ module musbands.admin.function.member {
 	requires spring.boot.autoconfigure;
 	requires spring.context;
 	requires spring.core;
-	requires spring.data.commons;
-	requires transitive spring.data.jpa;
+	requires transitive spring.data.commons;
+	requires spring.data.jpa;
 	requires spring.data.rest.core;
 	requires spring.hateoas;
 	requires spring.web;
