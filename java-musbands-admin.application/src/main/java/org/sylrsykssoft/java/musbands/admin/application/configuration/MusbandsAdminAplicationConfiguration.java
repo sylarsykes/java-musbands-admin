@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.PropertySource;
 
 /**
  * Global configuration
@@ -22,7 +21,7 @@ import org.springframework.context.annotation.PropertySource;
  *
  */
 @Configuration
-@PropertySource({ "classpath:application.properties", "classpath:logging.properties" })
+//@PropertySource({ "classpath:application.properties", "classpath:logging.properties" })
 @ComponentScan({ "org.sylrsykssoft.java.musbands.admin.function.member.*",
 	"org.sylrsykssoft.java.musbands.admin.instrument.*", "org.sylrsykssoft.java.musbands.admin.musical.genre.*" })
 @EnableCaching

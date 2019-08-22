@@ -62,6 +62,7 @@
 		<coreapi-framework.database.version>0.0.1-SNAPSHOT</coreapi-framework.database.version>
 		<coreapi-framework.service.version>0.0.1-SNAPSHOT</coreapi-framework.service.version>
 		<coreapi-framework.web.version>0.0.1-SNAPSHOT</coreapi-framework.web.version>
+		<coreapi-framework.mail.version>0.0.1-SNAPSHOT</coreapi-framework.mail.version>
 
 		<!-- Musbands Admin Dependencies -->
 	    <java-musbands.admin.function-member.version>${project.version}</java-musbands.admin.function-member.version>
@@ -108,7 +109,7 @@
 			<artifactId>spring-boot-starter-cache</artifactId>
 	  		<version>${spring-boot.version}</version>
 		</dependency>
-		
+
 		<!-- Core API Dependencies -->
 		<dependency>
 			<groupId>org.sylrsykssoft</groupId>
@@ -134,6 +135,11 @@
 			<groupId>org.sylrsykssoft</groupId>
 	    	<artifactId>coreapi-framework.web</artifactId>
 	    	<version>${coreapi-framework.web.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.mail</artifactId>
+	    	<version>${coreapi-framework.mail.version}</version>
 		</dependency>
 		
 		<dependency>

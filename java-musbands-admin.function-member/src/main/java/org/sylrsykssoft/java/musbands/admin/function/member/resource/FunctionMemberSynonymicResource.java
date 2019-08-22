@@ -4,7 +4,7 @@ import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-import org.sylrsykssoft.coreapi.framework.api.resource.BaseResource;
+import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMember;
 
 import lombok.AccessLevel;
@@ -14,7 +14,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.Setter;
 import lombok.Singular;
 
@@ -30,11 +29,10 @@ import lombok.Singular;
 @Setter
 @Getter
 @EqualsAndHashCode(callSuper = false, doNotUseGetters = true, exclude = "functionMembers")
-public class FunctionMemberSynonymicResource extends BaseResource<Integer> {
+public class FunctionMemberSynonymicResource extends BaseAdminResource {
 
 	// Properties
 
-	private @NonNull String name;
 	private @Singular Set<FunctionMember> functionMembers;
 
 	// Builder
@@ -49,11 +47,11 @@ public class FunctionMemberSynonymicResource extends BaseResource<Integer> {
 	 * 
 	 */
 	@Builder(builderMethodName = "functionMemberSynonymicResourceBuilder")
-	@ConstructorProperties({ "entityId", "name", "functionMembers", "createdAt", "updatedAt" })
-	public FunctionMemberSynonymicResource(final Integer entityId, final String name,
-			final Set<FunctionMember> functionMembers, final LocalDateTime createdAt, final LocalDateTime updatedAt) {
-		super(entityId, createdAt, updatedAt);
-		this.name = name;
+	@ConstructorProperties({ "entityId", "name", "description", "synonyms", "createdAt", "updatedAt", "removedAt" })
+	public FunctionMemberSynonymicResource(final Integer entityId, final String name, final String description,
+			final Set<FunctionMember> functionMembers,
+			final LocalDateTime createdAt, final LocalDateTime updatedAt, final LocalDateTime removedAt) {
+		super(entityId, name, description, createdAt, updatedAt, removedAt);
 		this.functionMembers = functionMembers;
 	}
 }

@@ -17,13 +17,6 @@ public class InstrumentException extends CoreApiFrameworkLibraryException {
 	private static final long serialVersionUID = 4594253434183319508L;
 
 	/**
-	 * Deafult constructor
-	 */
-	public InstrumentException() {
-		super();
-	}
-
-	/**
 	 * Message constructor
 	 * 
 	 * @param message

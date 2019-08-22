@@ -43,7 +43,7 @@ public final class InstrumentConstants {
 	// RESOURCE //
 	public static final String RESOURCE_BUILDER_NAME = "instrumentResourceBuilder";
 	public static final String RESOURCE_ASSEMBLER_NAME = "instrumentResourceAssembler";
-
+	public static final String MAILTO_BUILDER_NAME = "instrumentMailTOBuilder";
 
 	// SERVICE //
 	public static final String SERVICE_NAME = "instrumentService";
