@@ -2,10 +2,8 @@ package org.sylrsykssoft.java.musbands.admin.musical.genre.controller;
 
 import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_NAME;
 import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CONTROLLER_REQUEST_MAPPING;
-import static org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants.CREATE_MAIL_SERVICE_NAME;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -37,7 +35,6 @@ public class MusicalGenreController extends BaseAdminController<MusicalGenreReso
 	private MusicalGenreService musicalGenreService;
 
 	@Autowired
-	@Qualifier(CREATE_MAIL_SERVICE_NAME)
 	private CreateMusicalGenreMailAdminService createMusicalGenreMailAdminService;
 
 	@Override
