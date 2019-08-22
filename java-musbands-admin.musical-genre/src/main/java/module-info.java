@@ -8,6 +8,7 @@ module musbands.admin.musical.genre {
 	exports org.sylrsykssoft.java.musbands.admin.musical.genre.controller;
 	exports org.sylrsykssoft.java.musbands.admin.musical.genre.domain;
 	exports org.sylrsykssoft.java.musbands.admin.musical.genre.exception;
+	exports org.sylrsykssoft.java.musbands.admin.musical.genre.mail;
 	exports org.sylrsykssoft.java.musbands.admin.musical.genre.repository;
 	exports org.sylrsykssoft.java.musbands.admin.musical.genre.resource;
 	exports org.sylrsykssoft.java.musbands.admin.musical.genre.resource.assembler;
@@ -18,16 +19,16 @@ module musbands.admin.musical.genre {
 	requires coreapi.framework.api;
 	requires coreapi.framework.database;
 	requires coreapi.framework.library;
+	requires coreapi.framework.mail;
 	requires coreapi.framework.service;
 	requires coreapi.framework.web;
-	requires coreapi.framework.mail;
 
 	requires com.fasterxml.jackson.core;
 	requires com.fasterxml.jackson.databind;
 	requires java.persistence;
 	requires java.transaction;
 	requires java.mail;
-	requires static lombok;
+	requires lombok;
 	requires spring.beans;
 	requires spring.context;
 	requires transitive spring.context.support;
@@ -39,4 +40,18 @@ module musbands.admin.musical.genre {
 	requires spring.data.rest.core;
 	requires spring.hateoas;
 	requires transitive spring.web;
+
+	uses org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
+	uses org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
+	uses org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
+	uses org.sylrsykssoft.coreapi.framework.mail.domain.AdminMailTO;
+	uses org.sylrsykssoft.coreapi.framework.database.repository.BaseAdminRepository;
+	uses org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
+	uses org.sylrsykssoft.coreapi.framework.web.resource.assembler.BaseAdminResourceAssembler;
+	uses org.sylrsykssoft.coreapi.framework.service.BaseAdminService;
+
+	provides org.sylrsykssoft.coreapi.framework.service.IAdminService
+			with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
+	provides org.sylrsykssoft.coreapi.framework.library.mapper.IMapperFunction
+			with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
 }

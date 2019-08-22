@@ -10,7 +10,9 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreR
 import lombok.Builder;
 
 /**
- * @author Juan
+ * TO mail musical genre
+ * 
+ * @author juan.gonzalez.fernandez.jgf
  *
  */
 public class MusicalGenreMailTO extends AdminMailTO<MusicalGenreResource> {

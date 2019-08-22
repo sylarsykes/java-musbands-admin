@@ -22,9 +22,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.Singular;
 
 /**
@@ -39,8 +37,6 @@ import lombok.Singular;
 @Builder(toBuilder = true)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
-@Setter
-@Getter
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "synonyms")
 @EntityListeners({ BaseListener.class })
 public class FunctionMember extends BaseAdmin {

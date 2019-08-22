@@ -9,9 +9,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * DTO BaseAdmin
@@ -22,9 +20,7 @@ import lombok.Setter;
 @Data
 @Builder(toBuilder = true)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-@Setter
-@Getter
-@EqualsAndHashCode(callSuper = false, doNotUseGetters = true)
+@EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 public class MusicalGenreResource extends BaseAdminResource {
 
 	/**

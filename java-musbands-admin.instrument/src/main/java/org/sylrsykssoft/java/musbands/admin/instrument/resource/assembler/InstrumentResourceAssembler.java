@@ -18,7 +18,7 @@ import org.sylrsykssoft.java.musbands.admin.instrument.resource.InstrumentResour
  * @author juan.gonzalez.fernandez.jgf
  */
 public class InstrumentResourceAssembler
-extends BaseAdminResourceAssembler<InstrumentController, Instrument, InstrumentResource> {
+		extends BaseAdminResourceAssembler<InstrumentController, Instrument, InstrumentResource> {
 
 	/** The base entity resource model mapper function. */
 	@Autowired
