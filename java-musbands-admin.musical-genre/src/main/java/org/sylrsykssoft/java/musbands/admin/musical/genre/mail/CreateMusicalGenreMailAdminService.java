@@ -10,7 +10,9 @@ import org.sylrsykssoft.coreapi.framework.mail.service.MailAdminApiService;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreResource;
 
 /**
- * @author Juan
+ * Mail service
+ * 
+ * @author juan.gonzalez.fernandez.jgf
  *
  */
 @Service(CREATE_MAIL_SERVICE_NAME)
