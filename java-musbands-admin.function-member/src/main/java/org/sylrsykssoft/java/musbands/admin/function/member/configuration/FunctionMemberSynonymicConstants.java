@@ -15,6 +15,7 @@ public final class FunctionMemberSynonymicConstants {
 	// RESOURCE //
 	public static final String RESOURCE_BUILDER_NAME = "functionMemberSynonymicResourceBuilder";
 	public static final String RESOURCE_ASSEMBLER_NAME = "functionMemberSynonymicResourceAssembler";
+	public static final String MAILTO_BUILDER_NAME = "functionMemberSynonymicMailTOBuilder";
 
 	// PRIVATE //
 	/**

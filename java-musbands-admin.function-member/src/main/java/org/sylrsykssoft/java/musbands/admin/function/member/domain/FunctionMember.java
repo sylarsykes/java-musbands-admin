@@ -15,7 +15,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
-import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin.BaseAdminBuilder;
 import org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
 
 import lombok.AccessLevel;

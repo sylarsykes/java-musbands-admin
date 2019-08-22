@@ -17,13 +17,6 @@ public class MusicalGenreException extends CoreApiFrameworkLibraryException {
 	private static final long serialVersionUID = 4594253434183319508L;
 
 	/**
-	 * Deafult constructor
-	 */
-	public MusicalGenreException() {
-		super();
-	}
-
-	/**
 	 * Message constructor 
 	 * 
 	 * @param message

@@ -44,6 +44,7 @@ public final class FunctionMemberConstants {
 	// RESOURCE //
 	public static final String RESOURCE_BUILDER_NAME = "functionMemberResourceBuilder";
 	public static final String RESOURCE_ASSEMBLER_NAME = "functionMemberResourceAssembler";
+	public static final String MAILTO_BUILDER_NAME = "functionMemberMailTOBuilder";
 
 
 	// SERVICE //

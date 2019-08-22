@@ -20,21 +20,23 @@ module musbands.admin.instrument {
 	requires coreapi.framework.library;
 	requires coreapi.framework.service;
 	requires coreapi.framework.web;
+	requires coreapi.framework.mail;
 
 	requires com.fasterxml.jackson.core;
 	requires com.fasterxml.jackson.databind;
 	requires java.persistence;
 	requires java.transaction;
-	requires lombok;
-	requires slf4j.api;
+	requires java.mail;
+	requires static lombok;
 	requires spring.beans;
-	requires spring.boot;
-	requires spring.boot.autoconfigure;
 	requires spring.context;
-	requires spring.core;
+	requires transitive spring.context.support;
+	requires transitive spring.boot;
+	requires spring.boot.autoconfigure;
+	requires transitive spring.core;
 	requires transitive spring.data.commons;
 	requires spring.data.jpa;
 	requires spring.data.rest.core;
 	requires spring.hateoas;
-	requires spring.web;
+	requires transitive spring.web;
 }

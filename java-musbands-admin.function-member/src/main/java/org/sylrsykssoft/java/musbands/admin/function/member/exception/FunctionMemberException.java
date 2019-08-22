@@ -17,13 +17,6 @@ public class FunctionMemberException extends CoreApiFrameworkLibraryException {
 	private static final long serialVersionUID = 4594253434183319508L;
 
 	/**
-	 * Deafult constructor
-	 */
-	public FunctionMemberException() {
-		super();
-	}
-
-	/**
 	 * Message constructor 
 	 * 
 	 * @param message

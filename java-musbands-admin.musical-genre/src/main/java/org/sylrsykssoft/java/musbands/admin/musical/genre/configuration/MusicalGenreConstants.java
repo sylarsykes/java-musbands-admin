@@ -43,10 +43,12 @@ public final class MusicalGenreConstants {
 	// RESOURCE //
 	public static final String RESOURCE_BUILDER_NAME = "musicalGenreResourceBuilder";
 	public static final String RESOURCE_ASSEMBLER_NAME = "musicalGenreResourceAssembler";
+	public static final String MAILTO_BUILDER_NAME = "musicalGenreMailTOBuilder";
 
 
 	// SERVICE //
 	public static final String SERVICE_NAME = "musicalGenreService";
+	public static final String CREATE_MAIL_SERVICE_NAME = "createMusicalGenreMailAdminService";
 
 
 	// PRIVATE //
