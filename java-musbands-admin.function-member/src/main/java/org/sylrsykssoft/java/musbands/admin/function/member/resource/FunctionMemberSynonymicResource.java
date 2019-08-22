@@ -12,9 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.Singular;
 
 /**
@@ -24,11 +22,9 @@ import lombok.Singular;
  *
  */
 @Data
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-@Setter
-@Getter
-@EqualsAndHashCode(callSuper = false, doNotUseGetters = true, exclude = "functionMembers")
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "functionMembers")
 public class FunctionMemberSynonymicResource extends BaseAdminResource {
 
 	// Properties

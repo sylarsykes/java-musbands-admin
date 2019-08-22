@@ -20,9 +20,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.Singular;
 
 /**
@@ -35,11 +33,9 @@ import lombok.Singular;
 @Entity(name = REPOSITORY_ENTITY_NAME)
 @Data
 @Builder(toBuilder = true)
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-@Setter
-@Getter
-@EqualsAndHashCode(callSuper = false, doNotUseGetters = true)
+@AllArgsConstructor(access = AccessLevel.PUBLIC)
+@EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @EntityListeners({ BaseListener.class })
 public class FunctionMemberSynonymic extends BaseAdmin {
 
@@ -51,7 +47,7 @@ public class FunctionMemberSynonymic extends BaseAdmin {
 	 *
 	 */
 	public static class FunctionMemberSynonymicBuilder
-			extends BaseAdminBuilder<FunctionMemberSynonymic, FunctionMemberSynonymicBuilder> {
+	extends BaseAdminBuilder<FunctionMemberSynonymic, FunctionMemberSynonymicBuilder> {
 		/**
 		 * {inheritDoc}
 		 */
