@@ -25,8 +25,9 @@ public class CreateMusicalGenreMailAdminService extends BaseAdminMailService<Mus
 	@Override
 	public void setMailtTO(final MusicalGenreResource source) {
 		this.mailto = MusicalGenreMailTO.musicalGenreMailTOBuilder()
-				.from("sylar.sykes@gmail.com").to("musbands.contact@gmail.com").subject(source.getName())
-				.content(Optional.of(source.getDescription())).templateName(Optional.of("create-email.ftl")).build();
+				.from(serviceConfiguration.getFrom()).to(serviceConfiguration.getTo()).subject(source.getName())
+				.content(Optional.of(source.getDescription()))
+				.templateName(Optional.of(serviceConfiguration.getTemplateName())).build();
 	}
 
 }

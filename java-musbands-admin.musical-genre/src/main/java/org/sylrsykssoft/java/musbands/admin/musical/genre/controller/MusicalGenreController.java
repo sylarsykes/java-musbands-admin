@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.sylrsykssoft.coreapi.framework.database.exception.NotFoundEntityException;
-import org.sylrsykssoft.coreapi.framework.mail.exception.CoreApiFrameworkMailException;
+import org.sylrsykssoft.coreapi.framework.library.error.exception.CoreApiFrameworkLibraryException;
 import org.sylrsykssoft.coreapi.framework.mail.service.MailAdminApiFactoryService;
 import org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.domain.MusicalGenre;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.mail.MusicalGenreMailConfiguration;
+import org.sylrsykssoft.java.musbands.admin.musical.genre.mail.MusicalGenreMailServiceConfiguration;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreResource;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Rest Controller for Musical Genre API
@@ -31,6 +33,7 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreSe
  */
 @RestController(CONTROLLER_NAME)
 @RequestMapping(CONTROLLER_REQUEST_MAPPING)
+@Slf4j
 public class MusicalGenreController extends BaseAdminController<MusicalGenreResource, MusicalGenre> {
 
 	@Autowired
@@ -39,21 +42,22 @@ public class MusicalGenreController extends BaseAdminController<MusicalGenreReso
 	@Autowired
 	private MailAdminApiFactoryService<MusicalGenreResource> factoryMailService;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = {MediaTypes.HAL_JSON_VALUE, MediaType.APPLICATION_JSON_VALUE})
 	@ResponseStatus(HttpStatus.CREATED)
-	public MusicalGenreResource create(final @RequestBody MusicalGenreResource entity) throws NotFoundEntityException {
+	public MusicalGenreResource create(final @RequestBody MusicalGenreResource entity)
+			throws NotFoundEntityException, CoreApiFrameworkLibraryException {
 		final MusicalGenreResource result = super.create(entity);
 
 		try {
-			factoryMailService.execute(MusicalGenreMailConfiguration
-					.valueOfServiceName(MusicalGenreMailConfiguration.CREATE.getServiceName()), result, true);
-		} catch (final CoreApiFrameworkMailException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			factoryMailService.executeAsync(MusicalGenreMailServiceConfiguration
+					.valueOfServiceName(MusicalGenreMailServiceConfiguration.CREATE.getServiceName()), result, true);
 		} catch (final Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.warn("MusicalGenreController::create not Error in send mail for resource -> {}", result);
+			throw new CoreApiFrameworkLibraryException(e);
 		}
 
 		return result;

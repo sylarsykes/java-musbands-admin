@@ -29,7 +29,7 @@ module musbands.admin.musical.genre {
 	requires java.transaction;
 	requires java.mail;
 	requires lombok;
-	requires spring.jcl;
+	requires slf4j.api;
 	requires spring.beans;
 	requires spring.context;
 	requires transitive spring.context.support;
@@ -46,6 +46,7 @@ module musbands.admin.musical.genre {
 	uses org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
 	uses org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
 	uses org.sylrsykssoft.coreapi.framework.mail.domain.AdminMailTO;
+	uses org.sylrsykssoft.coreapi.framework.mail.service.BaseAdminMailService;
 	uses org.sylrsykssoft.coreapi.framework.database.repository.BaseAdminRepository;
 	uses org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
 	uses org.sylrsykssoft.coreapi.framework.web.resource.assembler.BaseAdminResourceAssembler;
@@ -55,4 +56,6 @@ module musbands.admin.musical.genre {
 	with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
 	provides org.sylrsykssoft.coreapi.framework.library.mapper.IMapperFunction
 	with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
+	provides org.sylrsykssoft.coreapi.framework.mail.service.MailAdminApiService
+	with org.sylrsykssoft.java.musbands.admin.musical.genre.mail.CreateMusicalGenreMailAdminService;
 }
