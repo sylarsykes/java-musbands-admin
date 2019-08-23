@@ -10,18 +10,19 @@ import org.sylrsykssoft.coreapi.framework.mail.service.MailAdminApiServiceConfig
 import lombok.Getter;
 
 /**
- * @author Juan
- *
+ * Service mail configuration
+ * 
+ * @author juan.gonzalez.fernandez.jgf
  */
 @Getter
-public enum MusicalGenreMailConfiguration implements MailAdminApiServiceConfiguration {
+public enum MusicalGenreMailServiceConfiguration implements MailAdminApiServiceConfiguration {
 
 	CREATE(CREATE_MAIL_SERVICE_NAME, "musbands.contact@gmail.com", "sylar.sykes@gmail.com", "create-email.ftl");
 
-	private static final Map<String, MusicalGenreMailConfiguration> BY_SERVICENAME = new HashMap<>();
+	private static final Map<String, MusicalGenreMailServiceConfiguration> BY_SERVICENAME = new HashMap<>();
 
 	static {
-		for (final MusicalGenreMailConfiguration serviceMailConfiguration : values()) {
+		for (final MusicalGenreMailServiceConfiguration serviceMailConfiguration : values()) {
 			BY_SERVICENAME.put(serviceMailConfiguration.serviceName, serviceMailConfiguration);
 		}
 	}
@@ -49,7 +50,7 @@ public enum MusicalGenreMailConfiguration implements MailAdminApiServiceConfigur
 	 * @param to
 	 * @param templateName
 	 */
-	private MusicalGenreMailConfiguration(final String serviceName, final String from, final String to,
+	private MusicalGenreMailServiceConfiguration(final String serviceName, final String from, final String to,
 			final String templateName) {
 		this.serviceName = serviceName;
 		this.from = from;
