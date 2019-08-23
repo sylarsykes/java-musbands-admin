@@ -17,7 +17,7 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreR
  */
 @Service(CREATE_MAIL_SERVICE_NAME)
 public class CreateMusicalGenreMailAdminService extends BaseAdminMailService<MusicalGenreResource>
-implements MailAdminApiService<MusicalGenreResource> {
+		implements MailAdminApiService<MusicalGenreResource> {
 
 	/**
 	 * {@inheritDoc}}
