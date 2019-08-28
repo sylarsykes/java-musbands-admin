@@ -13,7 +13,7 @@
   <artifactId>java-musbands.admin.client</artifactId>
   <packaging>jar</packaging>
   <name>java-musbands.admin.client</name>
-  <description>Musbands Admin Musical Genre Rest API</description>
+  <description>Rest Template Client for connect to Function Member, Instrument, Musical Genre APIs.</description>
   <url>https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands.admin.client</url>
 
   <properties>

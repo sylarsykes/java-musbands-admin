@@ -13,7 +13,7 @@
   <artifactId>java-musbands.admin.instrument</artifactId>
   <packaging>jar</packaging>
   <name>java-musbands.admin.instrument</name>
-  <description>Musbands Admin Instrument Rest API</description>
+  <description>Musbands Admin Instrument Rest API. Describe the instrument of a band member.</description>
   <url>https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands.admin.instrument</url>
 
   <properties>
