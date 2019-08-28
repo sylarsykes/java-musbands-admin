@@ -13,7 +13,7 @@
   <artifactId>java-musbands.admin.function-member</artifactId>
   <packaging>jar</packaging>
   <name>java-musbands.admin.function-member</name>
-  <description>Musbands Admin Function Member Rest API</description>
+  <description>Musbands Admin Function Member Rest API. Describe the function of a band member.</description>
   <url>https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands.admin.function-member</url>
 
   <properties>

@@ -13,7 +13,7 @@
   <artifactId>java-musbands.admin.musical-genre</artifactId>
   <packaging>jar</packaging>
   <name>java-musbands.admin.musical-genre</name>
-  <description>Musbands Admin Musical Genre Rest API</description>
+  <description>Musbands Admin Musical Genre Rest API. Describe the musical genre of the bands.</description>
   <url>https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands.admin.musical-genre</url>
 
   <properties>
