@@ -10,14 +10,24 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 * [Application](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.application) Spring Boot Application
 * [Client](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.client) Rest Template Client for connect to Function Member, Instrument, Musical Genre APIs.
 
+### How to use libraries?
 
-### Installation
-
-- Application, run project
+- Add repository in pom
 
 ```
-mvn spring-boot:run
+<!-- Core API Framework -->
+<repositories>
+	<repository>
+		<id>java-musbands-admin</id>
+		<url>https://github.com/sylarsykes/java-musbands-admin</url>
+		<snapshots>
+			<enabled>true</enabled>
+			<updatePolicy>always</updatePolicy>
+		</snapshots>
+	</repository>
+</repositories>
 ```
+
 
 - Function member, import dependency
 
@@ -28,6 +38,7 @@ mvn spring-boot:run
 	<version>${java-musbands.admin.function-member.version}</version>
 </dependency>
 ```
+
 - Instrument, import dependency
 
 ```
@@ -37,6 +48,7 @@ mvn spring-boot:run
 	<version>${coreapi-framework.api.version</version>
 </dependency>
 ```
+
 - Musical Genre, import dependency
 
 ```
@@ -46,6 +58,7 @@ mvn spring-boot:run
 	<version>${java-musbands.admin.musical-genre.version}</version>
 </dependency>
 ```
+
 - Client, import dependency
 
 ```
@@ -55,6 +68,7 @@ mvn spring-boot:run
 	<version>${java-musbands.admin.client.version}</version>
 </dependency>
 ```
+
 
 ### Built with
 
@@ -75,6 +89,7 @@ mvn spring-boot:run
 ### Authors
 
 - Juan González Fernández [juan.gonzalez.fernandez.jgf](https://github.com/sylarsykes)
+
 
 ### Related projects
 
