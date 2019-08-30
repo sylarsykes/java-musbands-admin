@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.sylrsykssoft.coreapi.framework.database.exception.NotFoundEntityException;
 import org.sylrsykssoft.coreapi.framework.library.error.exception.CoreApiFrameworkLibraryException;
+import org.sylrsykssoft.coreapi.framework.library.util.LoggerUtil;
+import org.sylrsykssoft.coreapi.framework.library.util.LoggerUtil.LogMessageLevel;
 import org.sylrsykssoft.coreapi.framework.mail.service.MailAdminApiFactoryService;
 import org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.domain.MusicalGenre;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.mail.MusicalGenreMailServiceConfiguration;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreResource;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Rest Controller for Musical Genre API
@@ -33,7 +33,6 @@ import lombok.extern.slf4j.Slf4j;
  */
 @RestController(CONTROLLER_NAME)
 @RequestMapping(CONTROLLER_REQUEST_MAPPING)
-@Slf4j
 public class MusicalGenreController extends BaseAdminController<MusicalGenreResource, MusicalGenre> {
 
 	@Autowired
@@ -56,7 +55,8 @@ public class MusicalGenreController extends BaseAdminController<MusicalGenreReso
 			factoryMailService.executeAsync(MusicalGenreMailServiceConfiguration
 					.valueOfServiceName(MusicalGenreMailServiceConfiguration.CREATE.getServiceName()), result, true);
 		} catch (final Exception e) {
-			LOGGER.warn("MusicalGenreController::create not Error in send mail for resource -> {}", result);
+			LoggerUtil.message(LogMessageLevel.WARN,
+					"MusicalGenreController::create not Error in send mail for resource -> {}", result);
 			throw new CoreApiFrameworkLibraryException(e);
 		}
 
