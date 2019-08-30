@@ -14,6 +14,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.Singular;
+import lombok.ToString;
 
 /**
  * DTO FunctionMember
@@ -24,6 +25,7 @@ import lombok.Singular;
 @Data
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
+@ToString(callSuper = true, includeFieldNames = true)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "synonyms")
 public class FunctionMemberResource extends BaseAdminResource {
 
