@@ -23,13 +23,10 @@ module musbands.admin.musical.genre {
 	requires coreapi.framework.service;
 	requires coreapi.framework.web;
 
-	requires com.fasterxml.jackson.core;
-	requires com.fasterxml.jackson.databind;
 	requires java.persistence;
 	requires java.transaction;
 	requires java.mail;
 	requires lombok;
-	requires slf4j.api;
 	requires spring.beans;
 	requires spring.context;
 	requires transitive spring.context.support;
@@ -38,6 +35,7 @@ module musbands.admin.musical.genre {
 	requires transitive spring.core;
 	requires transitive spring.data.commons;
 	requires spring.data.jpa;
+	requires org.hibernate.orm.core;
 	requires spring.data.rest.core;
 	requires spring.hateoas;
 	requires transitive spring.web;
@@ -53,9 +51,9 @@ module musbands.admin.musical.genre {
 	uses org.sylrsykssoft.coreapi.framework.service.BaseAdminService;
 
 	provides org.sylrsykssoft.coreapi.framework.service.IAdminService
-	with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
+			with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
 	provides org.sylrsykssoft.coreapi.framework.library.mapper.IMapperFunction
-	with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
+			with org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreService;
 	provides org.sylrsykssoft.coreapi.framework.mail.service.MailAdminApiService
-	with org.sylrsykssoft.java.musbands.admin.musical.genre.mail.CreateMusicalGenreMailAdminService;
+			with org.sylrsykssoft.java.musbands.admin.musical.genre.mail.CreateMusicalGenreMailAdminService;
 }

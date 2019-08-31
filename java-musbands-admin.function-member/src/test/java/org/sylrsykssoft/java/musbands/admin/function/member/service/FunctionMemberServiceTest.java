@@ -36,11 +36,11 @@ import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMem
 public class FunctionMemberServiceTest {
 
 	@Autowired
-	FunctionMemberService functionMemberService;
+	private FunctionMemberService functionMemberService;
 
-	FunctionMemberResource domain;
+	private FunctionMemberResource domain;
 
-	Example<FunctionMemberResource> example;
+	private Example<FunctionMemberResource> example;
 
 	@BeforeEach
 	public void setUp() {

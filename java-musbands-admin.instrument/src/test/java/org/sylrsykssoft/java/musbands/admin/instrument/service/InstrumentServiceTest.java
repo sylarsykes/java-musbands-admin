@@ -33,11 +33,11 @@ import org.sylrsykssoft.java.musbands.admin.instrument.resource.InstrumentResour
 public class InstrumentServiceTest {
 
 	@Autowired
-	InstrumentService instrumentService;
+	private InstrumentService instrumentService;
 
-	InstrumentResource domain;
+	private InstrumentResource domain;
 
-	Example<InstrumentResource> example;
+	private Example<InstrumentResource> example;
 
 	@BeforeEach
 	public void setUp() {

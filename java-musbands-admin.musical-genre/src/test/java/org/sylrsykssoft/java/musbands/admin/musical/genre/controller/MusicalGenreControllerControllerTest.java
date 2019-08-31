@@ -25,11 +25,10 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.sylrsykssoft.coreapi.framework.library.util.JsonStringUtil;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.MusicalGenreApplicationTests;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreTestsConfiguration;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreResource;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Musical genre controller test
@@ -42,24 +41,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @ContextConfiguration(classes = { MusicalGenreTestsConfiguration.class, }, loader = AnnotationConfigContextLoader.class)
 public class MusicalGenreControllerControllerTest {
 
-	public static String asJsonString(final Object obj) {
-		try {
-			final ObjectMapper mapper = new ObjectMapper();
-			final String jsonContent = mapper.writeValueAsString(obj);
-			return jsonContent;
-		} catch (final Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
 	private MockMvc mockMvc;
 
 	@Autowired
-	MusicalGenreControllerTest musicalGenreController;
+	private MusicalGenreControllerTest musicalGenreController;
 
-	MusicalGenreResource domain;
+	private MusicalGenreResource domain;
 
-	MusicalGenreResource domainForUdpate;
+	private MusicalGenreResource domainForUdpate;
 
 	@BeforeEach
 	public void setUp() {
@@ -77,7 +66,7 @@ public class MusicalGenreControllerControllerTest {
 	public void testCreateMusicalGenre() throws Exception {
 		// call POST /admin/musicalGenres/ application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain));
 
 		this.mockMvc.perform(postBuilder).andExpect(status().isCreated());
 
@@ -123,7 +112,7 @@ public class MusicalGenreControllerControllerTest {
 
 		// call GET /admin/musicalGenres/name/{name} application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_ALL_BY_EXAMPLE)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain));
 
 		final MvcResult result = mockMvc.perform(postBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -134,7 +123,8 @@ public class MusicalGenreControllerControllerTest {
 	public void testFindAllByExampleSortable() throws Exception {
 		// call GET /admin/musicalGenres/findAll/example/sort application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain)).param("direction", "asc").param("properties", "name", "description");
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain))
+				.param("direction", "asc").param("properties", "name", "description");
 
 		final MvcResult result = mockMvc.perform(postBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -146,7 +136,7 @@ public class MusicalGenreControllerControllerTest {
 
 		// call GET /admin/musicalGenres/name/{name} application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_EXAMPLE)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain));
 
 		final MvcResult result = mockMvc.perform(postBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -177,7 +167,7 @@ public class MusicalGenreControllerControllerTest {
 	public void testUpdateMusicalGenre() throws Exception {
 		// call PUT /admin/musicalGenres/ application/json
 		final MockHttpServletRequestBuilder putBuilder = MockMvcRequestBuilders.put(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_ID, 3)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domainForUdpate));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domainForUdpate));
 
 		this.mockMvc.perform(putBuilder).andExpect(status().isOk());
 
