@@ -23,8 +23,6 @@ module musbands.admin.instrument {
 	requires coreapi.framework.service;
 	requires coreapi.framework.web;
 
-	requires com.fasterxml.jackson.core;
-	requires com.fasterxml.jackson.databind;
 	requires java.persistence;
 	requires java.transaction;
 	requires java.mail;
@@ -37,6 +35,7 @@ module musbands.admin.instrument {
 	requires transitive spring.core;
 	requires transitive spring.data.commons;
 	requires spring.data.jpa;
+	requires org.hibernate.orm.core;
 	requires spring.data.rest.core;
 	requires spring.hateoas;
 	requires transitive spring.web;

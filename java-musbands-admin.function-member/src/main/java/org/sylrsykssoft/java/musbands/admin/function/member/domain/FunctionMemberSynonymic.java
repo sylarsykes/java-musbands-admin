@@ -12,6 +12,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
 import org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
 
@@ -23,6 +25,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.Singular;
 import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 /**
  * Entity function member synonymic
@@ -32,7 +35,10 @@ import lombok.ToString;
  */
 @Table(name = REPOSITORY_TABLE_NAME)
 @Entity(name = REPOSITORY_ENTITY_NAME)
+@DynamicInsert
+@DynamicUpdate
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder(toBuilder = true)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
@@ -49,7 +55,7 @@ public class FunctionMemberSynonymic extends BaseAdmin {
 	 *
 	 */
 	public static class FunctionMemberSynonymicBuilder
-	extends BaseAdminBuilder<FunctionMemberSynonymic, FunctionMemberSynonymicBuilder> {
+			extends BaseAdminBuilder<FunctionMemberSynonymic, FunctionMemberSynonymicBuilder> {
 		/**
 		 * {inheritDoc}
 		 */
@@ -64,6 +70,7 @@ public class FunctionMemberSynonymic extends BaseAdmin {
 
 	@ManyToMany
 	@JoinTable(name = "function_member_synonymic_functionmembers", joinColumns = @JoinColumn(name = "function_member_synonymic_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "function_member_id", referencedColumnName = "id"))
-	private @Singular Set<FunctionMember> functionMembers;
+	@Singular
+	Set<FunctionMember> functionMembers;
 
 }

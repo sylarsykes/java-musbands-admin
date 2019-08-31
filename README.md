@@ -1,18 +1,20 @@
 # Musbands Admin
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d2874b795fea4cfba2f7df1e13621ab2)](https://www.codacy.com/app/juan.gonzalez.fernandez.jgf/java-musbands-admin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sylarsykes/java-musbands-admin&amp;utm_campaign=Badge_Grade)
+
 Musbands Admin it is an API Rest with the administration of the master entities for [Musbands API Rest](https://github.com/sylarsykes/java-musbands). It is composed of the modules [Function Member](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.function-member), [Instument](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.instrument), [Musical Genre](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.musical-genre), [Application](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.application), [Client](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.client).
 
 
-### Features
-* [Function Member](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.function-member) Function Member API. Describe the function of a band member.
-* [Instrument](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.instrument) Instrument API. Describe the instrument of a band member.
-* [Musical Genre](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.musical-genre) Musical Genre API. Describe the musical genre of the bands.
-* [Application](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.application) Spring Boot Application
-* [Client](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.client) Rest Template Client for connect to Function Member, Instrument, Musical Genre APIs.
+## Features
+*  [Function Member](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.function-member) Function Member API. Describe the function of a band member.
+*  [Instrument](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.instrument) Instrument API. Describe the instrument of a band member.
+*  [Musical Genre](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.musical-genre) Musical Genre API. Describe the musical genre of the bands.
+*  [Application](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.application) Spring Boot Application
+*  [Client](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.client) Rest Template Client for connect to Function Member, Instrument, Musical Genre APIs.
 
-### How to use libraries?
+## How to use libraries?
 
-- Add repository in pom
+*  Add repository in pom
 
 ```
 <!-- Core API Framework -->
@@ -28,8 +30,7 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 </repositories>
 ```
 
-
-- Function member, import dependency
+*  Function member, import dependency
 
 ```
 <dependency>
@@ -39,7 +40,7 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 </dependency>
 ```
 
-- Instrument, import dependency
+*  Instrument, import dependency
 
 ```
 <dependency>	
@@ -49,7 +50,7 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 </dependency>
 ```
 
-- Musical Genre, import dependency
+*  Musical Genre, import dependency
 
 ```
 <dependency>
@@ -59,7 +60,7 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 </dependency>
 ```
 
-- Client, import dependency
+*  Client, import dependency
 
 ```
 <dependency>
@@ -70,32 +71,32 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 ```
 
 
-### Built with
+## Built with
 
-- [Maven](https://mvnrepository.com/) Dependency manager
-- [Core API Framework](https://github.com/sylarsykes/coreapi-framework)
-- [Spring Framework](https://github.com/spring-projects/spring-framework)
-- [Apache Commons](https://github.com/apache/commons-lang)
-- [Apache Commons Collections](https://github.com/apache/commons-collections/)
-- [Lombok](https://projectlombok.org/)
-- [Modelmapper](http://modelmapper.org/getting-started/)
+*  [Maven](https://mvnrepository.com/) Dependency manager
+*  [Core API Framework](https://github.com/sylarsykes/coreapi-framework)
+*  [Spring Framework](https://github.com/spring-projects/spring-framework)
+*  [Apache Commons](https://github.com/apache/commons-lang)
+*  [Apache Commons Collections](https://github.com/apache/commons-collections/)
+*  [Lombok](https://projectlombok.org/)
+*  [Modelmapper](http://modelmapper.org/getting-started/)
 
 
-### Version
+## Version
 
 0.0.1-SNAPSHOT. We use [SemVer](https://semver.org/) for versioning. For all available versions, see the [tags](https://github.com/sylarsykes/coreapi-framework/tags) in this repository.
 
 
-### Authors
+## Authors
 
-- Juan González Fernández [juan.gonzalez.fernandez.jgf](https://github.com/sylarsykes)
-
-
-### Related projects
-
-- [Musbands](https://github.com/sylarsykes/java-musbands)
+*  Juan González Fernández [juan.gonzalez.fernandez.jgf](https://github.com/sylarsykes)
 
 
-### License
+## Related projects
+
+-  [Musbands](https://github.com/sylarsykes/java-musbands)
+
+
+## License
 
 The Core API Framework is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).

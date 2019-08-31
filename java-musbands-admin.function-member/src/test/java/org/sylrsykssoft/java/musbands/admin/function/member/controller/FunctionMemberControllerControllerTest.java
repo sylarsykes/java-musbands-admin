@@ -25,11 +25,10 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.sylrsykssoft.coreapi.framework.library.util.JsonStringUtil;
 import org.sylrsykssoft.java.musbands.admin.function.member.FunctionMemberApplicationTests;
 import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberTestsConfiguration;
 import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberResource;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Function member controller test
@@ -42,23 +41,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @ContextConfiguration(classes = { FunctionMemberTestsConfiguration.class, }, loader = AnnotationConfigContextLoader.class)
 public class FunctionMemberControllerControllerTest {
 
-	public static String asJsonString(final Object obj) {
-		try {
-			final ObjectMapper mapper = new ObjectMapper();
-			final String jsonContent = mapper.writeValueAsString(obj);
-			return jsonContent;
-		} catch (final Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
-
 	private MockMvc mockMvc;
 
 	@Autowired
-	FunctionMemberControllerTest functionMemberController;
-	FunctionMemberResource domain;
+	private FunctionMemberControllerTest functionMemberController;
 
-	FunctionMemberResource domainForUdpate;
+	private FunctionMemberResource domain;
+
+	private FunctionMemberResource domainForUdpate;
 
 	@BeforeEach
 	public void setUp() {
@@ -76,7 +66,7 @@ public class FunctionMemberControllerControllerTest {
 	public void testCreateFunctionMember() throws Exception {
 		// call POST /admin/functionMembers/ application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain));
 
 		this.mockMvc.perform(postBuilder).andExpect(status().isCreated());
 
@@ -122,7 +112,7 @@ public class FunctionMemberControllerControllerTest {
 
 		// call GET /admin/functionMembers/name/{name} application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_ALL_BY_EXAMPLE)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain));
 
 		final MvcResult result = mockMvc.perform(postBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -133,7 +123,8 @@ public class FunctionMemberControllerControllerTest {
 	public void testFindAllByExampleSortable() throws Exception {
 		// call GET /admin/functionMembers/findAll/example/sort application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain)).param("direction", "asc").param("properties", "name", "description");
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain))
+				.param("direction", "asc").param("properties", "name", "description");
 
 		final MvcResult result = mockMvc.perform(postBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -145,7 +136,7 @@ public class FunctionMemberControllerControllerTest {
 
 		// call GET /admin/functionMembers/name/{name} application/json
 		final MockHttpServletRequestBuilder postBuilder = MockMvcRequestBuilders.post(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_EXAMPLE)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domain));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domain));
 
 		final MvcResult result = mockMvc.perform(postBuilder).andExpect(status().isOk()).andDo(print()).andReturn();
 
@@ -176,7 +167,7 @@ public class FunctionMemberControllerControllerTest {
 	public void testUpdateFunctionMember() throws Exception {
 		// call PUT /admin/functionMembers/ application/json
 		final MockHttpServletRequestBuilder putBuilder = MockMvcRequestBuilders.put(CONTROLLER_REQUEST_MAPPING_TEST + CONTROLLER_GET_FIND_BY_ID, 2)
-				.contentType(MediaType.APPLICATION_JSON_VALUE).content(asJsonString(domainForUdpate));
+				.contentType(MediaType.APPLICATION_JSON_VALUE).content(JsonStringUtil.asJsonString(domainForUdpate));
 
 		this.mockMvc.perform(putBuilder).andExpect(status().isOk());
 
