@@ -27,11 +27,20 @@ public final class MusicalGenreConstants {
 	public static final String CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE = "/findAll/example/sort";
 	public static final String CONTROLLER_PUT_UPDATE = "/{id}";
 	public static final String CONTROLLER_DELETE_DELETE = "/{id}";
+	public static final String CONTROLLER_AUDIT_NAME = "musicalGenreAuditController";
+	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.audit.rest.base-path}";
+	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING = CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH + "/"
+			+ CONTROLLER_REQUEST_NAME;
 
 	// MAPPER //
 	public static final String MAPPER_RESOURCE_FUNCTION = "musicalGenreMapperToResourceFunction";
 	public static final String MAPPER_RESOURCE_ASSEMBLER = "musicalGenreResourceAssembler";
 	public static final String MAPPER_ENTITY_FUNCTION = "musicalGenreMapperToEntityFunction";
+	public static final String MAPPER_AUDIT_ENTITY_FUNCTION = "musicalGenreAuditMapperToEntityFunction";
+	public static final String MAPPER_AUDIT_RESOURCE_FUNCTION = "musicalGenreAuditMapperToResourceFunction";
+	public static final String MAPPER_AUDIT_RESOURCE_ASSEMBLER = "musicalGenreAuditResourceAssembler";
+	public static final String MAPPER_SIMPLE_RESOURCE_FUNCTION = "musicalGenreSimpleMapperToResourceFunction";
+	public static final String MAPPER_SIMPLE_RESOURCE_ASSEMBLER = "musicalGenreSimpleResourceAssembler";
 
 	// REPOSITORY //
 	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_MAPPING;
@@ -48,6 +57,7 @@ public final class MusicalGenreConstants {
 
 	// SERVICE //
 	public static final String SERVICE_NAME = "musicalGenreService";
+	public static final String SERVICE_AUDIT_NAME = "musicalGenreAuditService";
 	public static final String CREATE_MAIL_SERVICE_NAME = "createMusicalGenreMailAdminService";
 
 

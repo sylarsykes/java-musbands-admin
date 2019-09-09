@@ -7,9 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
-import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
+import org.sylrsykssoft.coreapi.framework.audit.domain.BaseAdminAudit;
 import org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
 
 import lombok.AccessLevel;
@@ -27,15 +25,13 @@ import lombok.ToString;
  */
 @Table(name = REPOSITORY_TABLE_NAME)
 @Entity(name = REPOSITORY_ENTITY_NAME)
-@DynamicInsert
-@DynamicUpdate
 @Data
 @Builder(toBuilder = true)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
 @EntityListeners({ BaseListener.class })
-public class MusicalGenre extends BaseAdmin {
+public class MusicalGenre extends BaseAdminAudit {
 
 	/**
 	 * MusicalGenreBuilder
@@ -43,7 +39,7 @@ public class MusicalGenre extends BaseAdmin {
 	 * @author juan.gonzalez.fernandez.jgf
 	 *
 	 */
-	public static class MusicalGenreBuilder extends BaseAdminBuilder<MusicalGenre, MusicalGenreBuilder> {
+	public static class MusicalGenreBuilder extends BaseAdminAuditBuilder<MusicalGenre, MusicalGenreBuilder> {
 		/**
 		 * {inheritDoc}
 		 */

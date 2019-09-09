@@ -33,7 +33,8 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreSe
  */
 @RestController(CONTROLLER_NAME)
 @RequestMapping(CONTROLLER_REQUEST_MAPPING)
-public class MusicalGenreController extends BaseAdminController<MusicalGenreResource, MusicalGenre> {
+public class MusicalGenreController
+		extends BaseAdminController<MusicalGenreResource, MusicalGenre> {
 
 	@Autowired
 	private MusicalGenreService musicalGenreService;

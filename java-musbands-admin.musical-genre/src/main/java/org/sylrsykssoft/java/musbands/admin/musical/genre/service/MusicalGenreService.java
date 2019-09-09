@@ -16,7 +16,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 import org.springframework.stereotype.Service;
 import org.sylrsykssoft.coreapi.framework.database.exception.NotFoundEntityException;
-import org.sylrsykssoft.coreapi.framework.database.repository.BaseAdminRepository;
 import org.sylrsykssoft.coreapi.framework.library.mapper.ModelMapperFunction;
 import org.sylrsykssoft.coreapi.framework.service.BaseAdminService;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.domain.MusicalGenre;
@@ -71,7 +70,7 @@ public class MusicalGenreService extends BaseAdminService<MusicalGenre, MusicalG
 	 * {@inheritDoc}
 	 */
 	@Override
-	public BaseAdminRepository<MusicalGenre> getAdminRepository() {
+	public MusicalGenreRepository getAdminRepository() {
 		return musicalGenreRepository;
 	}
 
