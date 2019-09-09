@@ -24,7 +24,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class MusicalGenreResource extends BaseAdminResource {
+public class MusicalGenreSimpleResource extends BaseAdminResource {
 
 	/**
 	 * AllArgsConstructor
@@ -39,7 +39,7 @@ public class MusicalGenreResource extends BaseAdminResource {
 	 */
 	@Builder(builderMethodName = "musicalGenreResourceBuilder")
 	@ConstructorProperties({ "entityId", "name", "description", "createdAt", "updatedAt", "removeAt" })
-	public MusicalGenreResource(final Integer entityId, final String name, final String description,
+	public MusicalGenreSimpleResource(final Integer entityId, final String name, final String description,
 			final LocalDateTime createdAt, final LocalDateTime updatedAt, final LocalDateTime removedAt) {
 		super(entityId, name, description, createdAt, updatedAt, removedAt);
 	}

@@ -3,7 +3,7 @@ package org.sylrsykssoft.java.musbands.admin.musical.genre.resource;
 import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 
-import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
+import org.sylrsykssoft.coreapi.framework.audit.resource.BaseAdminAuditResource;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants;
 
 import lombok.AccessLevel;
@@ -24,7 +24,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class MusicalGenreResource extends BaseAdminResource {
+public class MusicalGenreAuditResource extends BaseAdminAuditResource {
 
 	/**
 	 * AllArgsConstructor
@@ -38,10 +38,13 @@ public class MusicalGenreResource extends BaseAdminResource {
 	 * @see MusicalGenreConstants.RESOURCE_BUILDER_NAME
 	 */
 	@Builder(builderMethodName = "musicalGenreResourceBuilder")
-	@ConstructorProperties({ "entityId", "name", "description", "createdAt", "updatedAt", "removeAt" })
-	public MusicalGenreResource(final Integer entityId, final String name, final String description,
+	@ConstructorProperties({ "entityId", "name", "description", "version", "createdBy", "createdDate", "lastModifiedBy",
+			"lastModifiedDate", "createdAt", "updatedAt", "removedAt" })
+	public MusicalGenreAuditResource(final Integer entityId, final String name, final String description,
+			final Integer version, final String createdBy, final LocalDateTime createdDate, final String lastModifiedBy,
+			final LocalDateTime lastModifiedDate,
 			final LocalDateTime createdAt, final LocalDateTime updatedAt, final LocalDateTime removedAt) {
-		super(entityId, name, description, createdAt, updatedAt, removedAt);
+		super(entityId, name, description, version, createdBy, createdDate, lastModifiedBy, lastModifiedDate, createdAt,
+				updatedAt, removedAt);
 	}
-
 }

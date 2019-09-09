@@ -59,6 +59,7 @@
 		<!-- Core API Dependencies -->
 		<coreapi-framework.library.version>0.0.1-SNAPSHOT</coreapi-framework.library.version>
 		<coreapi-framework.api.version>0.0.1-SNAPSHOT</coreapi-framework.api.version>
+		<coreapi-framework.audit.version>0.0.1-SNAPSHOT</coreapi-framework.audit.version>
 		<coreapi-framework.database.version>0.0.1-SNAPSHOT</coreapi-framework.database.version>
 		<coreapi-framework.service.version>0.0.1-SNAPSHOT</coreapi-framework.service.version>
 		<coreapi-framework.web.version>0.0.1-SNAPSHOT</coreapi-framework.web.version>
@@ -131,6 +132,11 @@
 			<groupId>org.sylrsykssoft</groupId>
 	    	<artifactId>coreapi-framework.database</artifactId>
 	    	<version>${coreapi-framework.database.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.audit</artifactId>
+	    	<version>${coreapi-framework.audit.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.sylrsykssoft</groupId>
