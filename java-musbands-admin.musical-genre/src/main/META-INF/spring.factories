@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConfiguration,\
+org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreMapperConfiguration
