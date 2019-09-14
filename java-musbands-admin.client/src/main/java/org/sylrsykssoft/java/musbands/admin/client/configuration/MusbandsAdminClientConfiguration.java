@@ -1,7 +1,9 @@
 package org.sylrsykssoft.java.musbands.admin.client.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.sylrsykssoft.coreapi.framework.web.BaseAdminRestTemplateController;
@@ -21,6 +23,8 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreR
  * @author juan.gonzalez.fernandez.jgf
  *
  */
+@Configuration
+@ConditionalOnProperty(value = "basePath", prefix = "spring.data.rest", matchIfMissing = true)
 public class MusbandsAdminClientConfiguration {
 
 	@Value("${spring.data.rest.base-path}")
@@ -36,7 +40,7 @@ public class MusbandsAdminClientConfiguration {
 	@Scope("prototype")
 	@Lazy
 	public BaseAdminRestTemplateController<FunctionMemberResource, FunctionMember> functionMemberControllerRestTemplate() {
-		return new BaseAdminRestTemplateController<FunctionMemberResource, FunctionMember>(basePath,
+		return new BaseAdminRestTemplateController<>(basePath,
 				FunctionMemberConstants.CONTROLLER_REQUEST_NAME, FunctionMemberResource.class);
 	}
 
@@ -49,7 +53,7 @@ public class MusbandsAdminClientConfiguration {
 	@Scope("prototype")
 	@Lazy
 	public BaseAdminRestTemplateController<InstrumentResource, Instrument> instrumentControllerRestTemplate() {
-		return new BaseAdminRestTemplateController<InstrumentResource, Instrument>(basePath,
+		return new BaseAdminRestTemplateController<>(basePath,
 				InstrumentConstants.CONTROLLER_REQUEST_NAME, InstrumentResource.class);
 	}
 
@@ -62,7 +66,7 @@ public class MusbandsAdminClientConfiguration {
 	@Scope("prototype")
 	@Lazy
 	public BaseAdminRestTemplateController<MusicalGenreResource, MusicalGenre> musicalGenreControllerRestTemplate() {
-		return new BaseAdminRestTemplateController<MusicalGenreResource, MusicalGenre>(basePath,
+		return new BaseAdminRestTemplateController<>(basePath,
 				MusicalGenreConstants.CONTROLLER_REQUEST_NAME, MusicalGenreResource.class);
 	}
 }
