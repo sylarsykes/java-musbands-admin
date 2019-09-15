@@ -35,11 +35,11 @@ public class MusicalGenreAuditResource extends BaseAdminAuditResource {
 	 * @param createdAt
 	 * @param updatedAt
 	 * 
-	 * @see MusicalGenreConstants.RESOURCE_BUILDER_NAME
+	 * @see MusicalGenreConstants.RESOURCE_AUDIT_BUILDER_NAME
 	 */
-	@Builder(builderMethodName = "musicalGenreResourceBuilder")
+	@Builder(builderMethodName = "musicalGenreAuditResourceBuilder")
 	@ConstructorProperties({ "entityId", "name", "description", "version", "createdBy", "createdDate", "lastModifiedBy",
-			"lastModifiedDate", "createdAt", "updatedAt", "removedAt" })
+		"lastModifiedDate", "createdAt", "updatedAt", "removedAt" })
 	public MusicalGenreAuditResource(final Integer entityId, final String name, final String description,
 			final Integer version, final String createdBy, final LocalDateTime createdDate, final String lastModifiedBy,
 			final LocalDateTime lastModifiedDate,

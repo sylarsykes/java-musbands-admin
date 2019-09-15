@@ -42,6 +42,7 @@ module musbands.admin.musical.genre {
 	requires spring.hateoas;
 	requires transitive spring.web;
 	requires spring.data.envers;
+	requires hibernate.envers;
 
 	uses org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
 	uses org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;

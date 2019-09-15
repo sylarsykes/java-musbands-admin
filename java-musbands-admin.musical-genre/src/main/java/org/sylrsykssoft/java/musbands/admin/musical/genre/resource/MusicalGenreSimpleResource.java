@@ -3,7 +3,7 @@ package org.sylrsykssoft.java.musbands.admin.musical.genre.resource;
 import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 
-import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
+import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminSimpleResource;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants;
 
 import lombok.AccessLevel;
@@ -24,7 +24,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class MusicalGenreSimpleResource extends BaseAdminResource {
+public class MusicalGenreSimpleResource extends BaseAdminSimpleResource {
 
 	/**
 	 * AllArgsConstructor
@@ -35,13 +35,13 @@ public class MusicalGenreSimpleResource extends BaseAdminResource {
 	 * @param createdAt
 	 * @param updatedAt
 	 * 
-	 * @see MusicalGenreConstants.RESOURCE_BUILDER_NAME
+	 * @see MusicalGenreConstants.RESOURCE_SIMPLE_BUILDER_NAME
 	 */
-	@Builder(builderMethodName = "musicalGenreResourceBuilder")
-	@ConstructorProperties({ "entityId", "name", "description", "createdAt", "updatedAt", "removeAt" })
-	public MusicalGenreSimpleResource(final Integer entityId, final String name, final String description,
-			final LocalDateTime createdAt, final LocalDateTime updatedAt, final LocalDateTime removedAt) {
-		super(entityId, name, description, createdAt, updatedAt, removedAt);
+	@Builder(builderMethodName = "musicalGenreSimpleResourceBuilder")
+	@ConstructorProperties({ "entityId", "name", "createdAt", "updatedAt", })
+	public MusicalGenreSimpleResource(final Integer entityId, final String name, final LocalDateTime createdAt,
+			final LocalDateTime updatedAt) {
+		super(entityId, name, createdAt, updatedAt);
 	}
 
 }
