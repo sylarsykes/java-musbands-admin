@@ -7,8 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Table;
 
+import org.hibernate.envers.AuditOverride;
+import org.hibernate.envers.AuditOverrides;
 import org.hibernate.envers.Audited;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.sylrsykssoft.coreapi.framework.api.model.Base;
+import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
 import org.sylrsykssoft.coreapi.framework.audit.domain.BaseAdminAudit;
 import org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
 
@@ -28,6 +32,10 @@ import lombok.ToString;
 @Table(name = REPOSITORY_TABLE_NAME)
 @Entity(name = REPOSITORY_ENTITY_NAME)
 @Audited
+@AuditOverrides(value = {
+		@AuditOverride(forClass = BaseAdminAudit.class, isAudited = true),
+		@AuditOverride(forClass = BaseAdmin.class, isAudited = true),
+		@AuditOverride(forClass = Base.class, isAudited = true) })
 @Data
 @Builder(toBuilder = true)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
