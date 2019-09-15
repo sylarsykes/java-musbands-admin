@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Table;
 
+import org.hibernate.envers.Audited;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.sylrsykssoft.coreapi.framework.audit.domain.BaseAdminAudit;
 import org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
 
@@ -25,12 +27,13 @@ import lombok.ToString;
  */
 @Table(name = REPOSITORY_TABLE_NAME)
 @Entity(name = REPOSITORY_ENTITY_NAME)
+@Audited
 @Data
 @Builder(toBuilder = true)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-@EntityListeners({ BaseListener.class })
+@EntityListeners({ BaseListener.class, AuditingEntityListener.class })
 public class MusicalGenre extends BaseAdminAudit {
 
 	/**

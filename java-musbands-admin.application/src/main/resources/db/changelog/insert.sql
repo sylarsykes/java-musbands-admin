@@ -25,10 +25,10 @@ INSERT INTO `musbands_admin`.`instrument`(`name`, `created_at`) VALUES ('Bass', 
 INSERT INTO `musbands_admin`.`instrument`(`name`, `created_at`) VALUES ('Keyboard', SYSDATE());
 
 -- Musical Genre
-INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, `created_at`) VALUES ('Metalcore', NULL, SYSDATE());
-INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, `created_at`) VALUES ('Alternative metal', NULL, SYSDATE());
-INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, `created_at`) VALUES ('Alternative rock', NULL, SYSDATE());
-INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, `created_at`) VALUES ('Pop rock', NULL, SYSDATE());
-INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, `created_at`) VALUES ('Electronic rock', NULL, SYSDATE());
-INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, `created_at`) VALUES ('Death core', NULL, SYSDATE());
-INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, `created_at`) VALUES ('Pop punk', NULL, SYSDATE());
+INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, version, created_by, created_date, `created_at`) VALUES ('Metalcore', NULL, 1, 'musbands.admin', SYSDATE(), SYSDATE());
+INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, version, created_by, created_date, `created_at`) VALUES ('Alternative metal', NULL, 1, 'musbands.admin', SYSDATE(), SYSDATE());
+INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, version, created_by, created_date, `created_at`) VALUES ('Alternative rock', NULL, 1, 'musbands.admin', SYSDATE(), SYSDATE());
+INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, version, created_by, created_date, `created_at`) VALUES ('Pop rock', NULL, 1, 'musbands.admin', SYSDATE(), SYSDATE());
+INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, version, created_by, created_date, `created_at`) VALUES ('Electronic rock', NULL, 1, 'musbands.admin', SYSDATE(), SYSDATE());
+INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, version, created_by, created_date, `created_at`) VALUES ('Death core', NULL, 1, 'musbands.admin', SYSDATE(), SYSDATE());
+INSERT INTO `musbands_admin`.`musical_genre`(`name`, `description`, version, created_by, created_date, `created_at`) VALUES ('Pop punk', NULL, 1, 'musbands.admin', SYSDATE(), SYSDATE());
