@@ -33,10 +33,10 @@ import org.sylrsykssoft.java.musbands.admin.function.member.resource.assembler.F
 public class FunctionMemberMapperConfiguration {
 
 	/**
-	 * FunctionMember mapper to entity function.
+	 * FunctionMemberAudit mapper to entity function.
 	 *
-	 * @return ModelMapperFunction<FunctionMemberResource, FunctionMember> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<FunctionMemberAuditResource, FunctionMember> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_AUDIT_ENTITY_FUNCTION)
 	@Scope(value = "prototype")
@@ -46,10 +46,10 @@ public class FunctionMemberMapperConfiguration {
 	}
 
 	/**
-	 * FunctionMember mapper to resource function.
+	 * FunctionMemberAudit mapper to resource function.
 	 *
-	 * @return ModelMapperFunction<FunctionMember, FunctionMemberResource> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<FunctionMember, FunctionMemberAuditResource> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_AUDIT_RESOURCE_FUNCTION)
 	@Scope(value = "prototype")
@@ -60,9 +60,9 @@ public class FunctionMemberMapperConfiguration {
 	}
 
 	/**
-	 * FunctionMember resource assembler
+	 * FunctionMemberAudit resource assembler
 	 *
-	 * @return FunctionMemberResourceAssembler the model resource assembler
+	 * @return FunctionMemberAuditResourceAssembler the model resource assembler
 	 */
 	@Bean(MAPPER_AUDIT_RESOURCE_ASSEMBLER)
 	@Scope(value = "prototype")
@@ -108,10 +108,10 @@ public class FunctionMemberMapperConfiguration {
 	}
 
 	/**
-	 * FunctionMember mapper to entity function.
+	 * FunctionMemberSimple mapper to entity function.
 	 *
-	 * @return ModelMapperFunction<FunctionMemberResource, FunctionMember> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<FunctionMemberSimpleResource, FunctionMember> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_SIMPLE_ENTITY_FUNCTION)
 	@Scope(value = "prototype")
@@ -121,10 +121,10 @@ public class FunctionMemberMapperConfiguration {
 	}
 
 	/**
-	 * FunctionMember mapper to resource function.
+	 * FunctionMemberSimple mapper to resource function.
 	 *
-	 * @return ModelMapperFunction<FunctionMember, FunctionMemberResource> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<FunctionMember, FunctionMemberSimpleResource> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_SIMPLE_RESOURCE_FUNCTION)
 	@Scope(value = "prototype")
@@ -134,9 +134,9 @@ public class FunctionMemberMapperConfiguration {
 	}
 
 	/**
-	 * FunctionMember resource assembler
+	 * FunctionMemberSimple resource assembler
 	 *
-	 * @return FunctionMemberResourceAssembler the model resource assembler
+	 * @return FunctionMemberSimpleResourceAssembler the model resource assembler
 	 */
 	@Bean(MAPPER_SIMPLE_RESOURCE_ASSEMBLER)
 	@Scope(value = "prototype")
@@ -145,4 +145,5 @@ public class FunctionMemberMapperConfiguration {
 		return new FunctionMemberSimpleResourceAssembler(FunctionMemberSimpleController.class, FunctionMember.class,
 				FunctionMemberSimpleResource.class);
 	}
+
 }

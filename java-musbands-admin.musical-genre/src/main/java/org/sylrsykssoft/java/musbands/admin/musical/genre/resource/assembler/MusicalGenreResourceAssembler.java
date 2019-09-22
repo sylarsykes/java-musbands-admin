@@ -13,7 +13,7 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.domain.MusicalGenre;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreResource;
 
 /**
- * The Class BaseResourceAssembler.
+ * MusicalGenreResourceAssembler
  * 
  * @author juan.gonzalez.fernandez.jgf
  */

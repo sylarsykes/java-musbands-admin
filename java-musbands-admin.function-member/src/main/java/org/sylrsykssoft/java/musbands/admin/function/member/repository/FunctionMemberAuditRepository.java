@@ -11,7 +11,7 @@ import org.sylrsykssoft.coreapi.framework.audit.repository.BaseAdminAuditReposit
 import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMember;
 
 /**
- * FunctionMember Rest Repository
+ * FunctionMemberAuditRepository Rest Repository
  * 
  * @author juan.gonzalez.fernandez.jgf
  *

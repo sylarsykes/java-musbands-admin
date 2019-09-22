@@ -36,10 +36,10 @@ import org.sylrsykssoft.java.musbands.admin.instrument.resource.assembler.Instru
 public class InstrumentMapperConfiguration {
 
 	/**
-	 * Instrument mapper to entity function.
+	 * InstrumentAudit mapper to entity function.
 	 *
-	 * @return ModelMapperFunction<InstrumentResource, Instrument> the model mapper
-	 *         function
+	 * @return ModelMapperFunction<InstrumentAuditResource, Instrument> the model
+	 *         mapper function
 	 */
 	@Bean(MAPPER_AUDIT_ENTITY_FUNCTION)
 	@Scope(value = "prototype")
@@ -49,10 +49,10 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * Instrument mapper to resource function.
+	 * InstrumentAudit mapper to resource function.
 	 *
-	 * @return ModelMapperFunction<Instrument, InstrumentResource> the model mapper
-	 *         function
+	 * @return ModelMapperFunction<Instrument, InstrumentAuditResource> the model
+	 *         mapper function
 	 */
 	@Bean(MAPPER_AUDIT_RESOURCE_FUNCTION)
 	@Scope(value = "prototype")
@@ -62,9 +62,9 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * Instrument resource assembler
+	 * InstrumentAudit resource assembler
 	 *
-	 * @return InstrumentResourceAssembler the model resource assembler
+	 * @return InstrumentAuditResourceAssembler the model resource assembler
 	 */
 	@Bean(MAPPER_AUDIT_RESOURCE_ASSEMBLER)
 	@Scope(value = "prototype")
@@ -75,9 +75,9 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * instrument mapper to entity function.
+	 * Instrument mapper to entity function.
 	 *
-	 * @return ModelMapperFunction<instrumentResource, instrument> the model mapper
+	 * @return ModelMapperFunction<InstrumentResource, Instrument> the model mapper
 	 *         function
 	 */
 	@Bean(MAPPER_ENTITY_FUNCTION)
@@ -88,9 +88,9 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * instrument mapper to resource function.
+	 * Instrument mapper to resource function.
 	 *
-	 * @return ModelMapperFunction<instrument, instrumentResource> the model mapper
+	 * @return ModelMapperFunction<Instrument, InstrumentResource> the model mapper
 	 *         function
 	 */
 	@Bean(MAPPER_RESOURCE_FUNCTION)
@@ -101,9 +101,9 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * instrument resource assembler
+	 * Instrument resource assembler
 	 *
-	 * @return instrumentResourceAssembler the model resource assembler
+	 * @return InstrumentResourceAssembler the model resource assembler
 	 */
 	@Bean(MAPPER_RESOURCE_ASSEMBLER)
 	@Scope(value = "prototype")
@@ -113,10 +113,10 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * Instrument mapper to entity function.
+	 * InstrumentSimple mapper to entity function.
 	 *
-	 * @return ModelMapperFunction<InstrumentResource, Instrument> the model mapper
-	 *         function
+	 * @return ModelMapperFunction<InstrumentSimpleResource, Instrument> the model
+	 *         mapper function
 	 */
 	@Bean(MAPPER_SIMPLE_ENTITY_FUNCTION)
 	@Scope(value = "prototype")
@@ -126,10 +126,10 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * Instrument mapper to resource function.
+	 * InstrumentSimple mapper to resource function.
 	 *
-	 * @return ModelMapperFunction<Instrument, InstrumentResource> the model mapper
-	 *         function
+	 * @return ModelMapperFunction<Instrument, InstrumentSimpleResource> the model
+	 *         mapper function
 	 */
 	@Bean(MAPPER_SIMPLE_RESOURCE_FUNCTION)
 	@Scope(value = "prototype")
@@ -139,9 +139,9 @@ public class InstrumentMapperConfiguration {
 	}
 
 	/**
-	 * Instrument resource assembler
+	 * InstrumentSimple resource assembler
 	 *
-	 * @return InstrumentResourceAssembler the model resource assembler
+	 * @return InstrumentSimpleResourceAssembler the model resource assembler
 	 */
 	@Bean(MAPPER_SIMPLE_RESOURCE_ASSEMBLER)
 	@Scope(value = "prototype")

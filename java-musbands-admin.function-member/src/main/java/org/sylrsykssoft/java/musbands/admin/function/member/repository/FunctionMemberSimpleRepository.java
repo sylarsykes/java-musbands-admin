@@ -11,7 +11,7 @@ import org.sylrsykssoft.coreapi.framework.database.repository.BaseAdminRepositor
 import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMember;
 
 /**
- * FunctionMember Rest Repository
+ * FunctionMemberSimpleRepository Rest Repository
  * 
  * @author juan.gonzalez.fernandez.jgf
  *
