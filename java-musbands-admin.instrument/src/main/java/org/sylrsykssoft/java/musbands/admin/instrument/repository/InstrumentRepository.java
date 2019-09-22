@@ -4,9 +4,6 @@ import static org.sylrsykssoft.java.musbands.admin.instrument.configuration.Inst
 import static org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants.REPOSITORY_REST_COLLECTION_RESOURCE_REL;
 import static org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants.REPOSITORY_REST_RESOURCE_PATH;
 
-import java.util.Optional;
-
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,14 +21,4 @@ import org.sylrsykssoft.java.musbands.admin.instrument.domain.Instrument;
 @Transactional
 public interface InstrumentRepository extends BaseAdminRepository<Instrument> {
 
-	/**
-	 * Find by name.
-	 * 
-	 * @param name Value of the attribute name
-	 * 
-	 * @return T entity.
-	 */
-	@Override
-	@Query("select e from #{#entityName} e where e.name = :name")
-	Optional<Instrument> findByName(final String name);
 }

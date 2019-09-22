@@ -11,7 +11,7 @@ import org.sylrsykssoft.coreapi.framework.database.repository.BaseAdminSimpleRep
 import org.sylrsykssoft.java.musbands.admin.instrument.domain.Instrument;
 
 /**
- * Instrument Rest Repository
+ * InstrumentSimpleRepository Rest Repository
  * 
  * @author juan.gonzalez.fernandez.jgf
  *

@@ -36,10 +36,10 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.assembler.Mus
 public class MusicalGenreMapperConfiguration {
 
 	/**
-	 * MusicalGenre mapper to entity function.
+	 * MusicalGenreAudit mapper to entity function.
 	 *
-	 * @return ModelMapperFunction<MusicalGenreResource, MusicalGenre> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<MusicalGenreAuditResource, MusicalGenre> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_AUDIT_ENTITY_FUNCTION)
 	@Scope(value = "prototype")
@@ -49,10 +49,10 @@ public class MusicalGenreMapperConfiguration {
 	}
 
 	/**
-	 * MusicalGenre mapper to resource function.
+	 * MusicalGenreAudit mapper to resource function.
 	 *
-	 * @return ModelMapperFunction<MusicalGenre, MusicalGenreResource> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<MusicalGenre, MusicalGenreAuditResource> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_AUDIT_RESOURCE_FUNCTION)
 	@Scope(value = "prototype")
@@ -63,9 +63,9 @@ public class MusicalGenreMapperConfiguration {
 	}
 
 	/**
-	 * MusicalGenre resource assembler
+	 * MusicalGenreAudit resource assembler
 	 *
-	 * @return MusicalGenreResourceAssembler the model resource assembler
+	 * @return MusicalGenreAuditResourceAssembler the model resource assembler
 	 */
 	@Bean(MAPPER_AUDIT_RESOURCE_ASSEMBLER)
 	@Scope(value = "prototype")
@@ -115,10 +115,10 @@ public class MusicalGenreMapperConfiguration {
 	}
 
 	/**
-	 * MusicalGenre mapper to entity function.
+	 * MusicalGenreSimple mapper to entity function.
 	 *
-	 * @return ModelMapperFunction<MusicalGenreResource, MusicalGenre> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<MusicalGenreSimpleResource, MusicalGenre> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_SIMPLE_ENTITY_FUNCTION)
 	@Scope(value = "prototype")
@@ -128,10 +128,10 @@ public class MusicalGenreMapperConfiguration {
 	}
 
 	/**
-	 * MusicalGenre mapper to resource function.
+	 * MusicalGenreSimple mapper to resource function.
 	 *
-	 * @return ModelMapperFunction<MusicalGenre, MusicalGenreResource> the model
-	 *         mapper function
+	 * @return ModelMapperFunction<MusicalGenre, MusicalGenreSimpleResource> the
+	 *         model mapper function
 	 */
 	@Bean(MAPPER_SIMPLE_RESOURCE_FUNCTION)
 	@Scope(value = "prototype")
@@ -142,9 +142,9 @@ public class MusicalGenreMapperConfiguration {
 	}
 
 	/**
-	 * MusicalGenre resource assembler
+	 * MusicalGenreSimple resource assembler
 	 *
-	 * @return MusicalGenreResourceAssembler the model resource assembler
+	 * @return MusicalGenreSimpleResourceAssembler the model resource assembler
 	 */
 	@Bean(MAPPER_SIMPLE_RESOURCE_ASSEMBLER)
 	@Scope(value = "prototype")
@@ -153,4 +153,5 @@ public class MusicalGenreMapperConfiguration {
 		return new MusicalGenreSimpleResourceAssembler(MusicalGenreSimpleController.class, MusicalGenre.class,
 				MusicalGenreSimpleResource.class);
 	}
+
 }
