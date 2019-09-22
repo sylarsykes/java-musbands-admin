@@ -12,10 +12,22 @@ public final class FunctionMemberConstants {
 	public static final String CACHE_MANGER_BEAN_NAME = "${musbands.admin.cache.cache-manager}";
 
 	// CONTROLLER //
+	public static final String CONTROLLER_REQUEST_NAME = "functionMembers";
 	public static final String CONTROLLER_NAME = "functionMemberController";
 	public static final String CONTROLLER_TEST_NAME = "functionMemberControllerTest";
+	public static final String CONTROLLER_SIMPLE_NAME = "functionMemberSimpleController";
+	public static final String CONTROLLER_AUDIT_NAME = "functionMemberAuditController";
+
+	// CONTROLLER BASE PATH //
 	public static final String CONTROLLER_REQUEST_MAPPING_BASE_PATH = "${spring.data.rest.base-path}";
-	public static final String CONTROLLER_REQUEST_NAME = "functionMembers";
+	public static final String CONTROLLER_SIMPLE_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.simple.rest.base-path}";
+	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.audit.rest.base-path}";
+
+	// CONTROLLER PATH //
+	public static final String CONTROLLER_SIMPLE_REQUEST_MAPPING = CONTROLLER_SIMPLE_REQUEST_MAPPING_BASE_PATH + "/"
+			+ CONTROLLER_REQUEST_NAME;
+	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING = CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH + "/"
+			+ CONTROLLER_REQUEST_NAME;
 	public static final String CONTROLLER_REQUEST_MAPPING = CONTROLLER_REQUEST_MAPPING_BASE_PATH + "/"
 			+ CONTROLLER_REQUEST_NAME;
 	public static final String CONTROLLER_REQUEST_MAPPING_BASE_PATH_TEST = "/admin";
@@ -33,22 +45,37 @@ public final class FunctionMemberConstants {
 	public static final String MAPPER_RESOURCE_FUNCTION = "functionMemberMapperToResourceFunction";
 	public static final String MAPPER_RESOURCE_ASSEMBLER = "functionMemberResourceAssembler";
 	public static final String MAPPER_ENTITY_FUNCTION = "functionMemberMapperToEntityFunction";
+	public static final String MAPPER_AUDIT_ENTITY_FUNCTION = "functionMemberAuditMapperToEntityFunction";
+	public static final String MAPPER_AUDIT_RESOURCE_FUNCTION = "functionMemberAuditMapperToResourceFunction";
+	public static final String MAPPER_AUDIT_RESOURCE_ASSEMBLER = "functionMemberAuditResourceAssembler";
+	public static final String MAPPER_SIMPLE_ENTITY_FUNCTION = "functionMemberSimpleMapperToEntityFunction";
+	public static final String MAPPER_SIMPLE_RESOURCE_FUNCTION = "functionMemberSimpleMapperToResourceFunction";
+	public static final String MAPPER_SIMPLE_RESOURCE_ASSEMBLER = "functionMemberSimpleResourceAssembler";
 
 	// REPOSITORY //
 	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_MAPPING;
 	public static final String REPOSITORY_REST_RESOURCE_PATH = CONTROLLER_REQUEST_MAPPING;
 	public static final String REPOSITORY_NAME = "functionMemberRepository";
+	public static final String REPOSITORY_AUDIT_REST_COLLECTION_RESOURCE_REL = CONTROLLER_AUDIT_REQUEST_MAPPING;
+	public static final String REPOSITORY_AUDIT_REST_RESOURCE_PATH = CONTROLLER_AUDIT_REQUEST_MAPPING;
+	public static final String REPOSITORY_AUDIT_NAME = "functionMemberAuditRepository";
+	public static final String REPOSITORY_SIMPLE_REST_COLLECTION_RESOURCE_REL = CONTROLLER_SIMPLE_REQUEST_MAPPING;
+	public static final String REPOSITORY_SIMPLE_REST_RESOURCE_PATH = CONTROLLER_SIMPLE_REQUEST_MAPPING;
+	public static final String REPOSITORY_SIMPLE_NAME = "functionMemberSimpleRepository";
 	public static final String REPOSITORY_TABLE_NAME = "function_member";
 	public static final String REPOSITORY_ENTITY_NAME = "functionMember";
 
 	// RESOURCE //
 	public static final String RESOURCE_BUILDER_NAME = "functionMemberResourceBuilder";
+	public static final String RESOURCE_AUDIT_BUILDER_NAME = "functionMemberAuditResourceBuilder";
+	public static final String RESOURCE_SIMPLE_BUILDER_NAME = "functionMemberSimpleResourceBuilder";
 	public static final String RESOURCE_ASSEMBLER_NAME = "functionMemberResourceAssembler";
 	public static final String MAILTO_BUILDER_NAME = "functionMemberMailTOBuilder";
 
-
 	// SERVICE //
 	public static final String SERVICE_NAME = "functionMemberService";
+	public static final String SERVICE_AUDIT_NAME = "functionMemberAuditService";
+	public static final String SERVICE_SIMPLE_NAME = "functionMemberSimpleService";
 
 
 	// PRIVATE //

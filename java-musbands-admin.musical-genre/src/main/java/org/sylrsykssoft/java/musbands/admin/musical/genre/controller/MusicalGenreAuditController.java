@@ -12,7 +12,7 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreA
 import org.sylrsykssoft.java.musbands.admin.musical.genre.service.MusicalGenreAuditService;
 
 /**
- * Rest Controller for Musical Genre API
+ * Rest Controller for Musical Genre Audit API
  * 
  * @author juan.gonzalez.fernandez.jgf
  * 

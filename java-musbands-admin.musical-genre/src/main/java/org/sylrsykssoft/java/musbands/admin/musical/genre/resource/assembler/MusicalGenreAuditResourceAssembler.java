@@ -13,12 +13,12 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.domain.MusicalGenre;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreAuditResource;
 
 /**
- * The Class BaseResourceAssembler.
+ * The Class BaseAdminAuditResourceAssembler.
  * 
  * @author juan.gonzalez.fernandez.jgf
  */
 public class MusicalGenreAuditResourceAssembler
-extends BaseAdminAuditResourceAssembler<MusicalGenreAuditController, MusicalGenre, MusicalGenreAuditResource> {
+		extends BaseAdminAuditResourceAssembler<MusicalGenreAuditController, MusicalGenre, MusicalGenreAuditResource> {
 
 	/** The base entity resource model mapper function. */
 	@Autowired

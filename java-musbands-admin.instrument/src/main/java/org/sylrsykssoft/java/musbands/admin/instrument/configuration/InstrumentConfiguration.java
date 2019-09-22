@@ -3,6 +3,7 @@ package org.sylrsykssoft.java.musbands.admin.instrument.configuration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.envers.repository.support.EnversRevisionRepositoryFactoryBean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
@@ -22,7 +23,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 	"org.sylrsykssoft.coreapi.framework.mail.*",
 	"org.sylrsykssoft.java.musbands.admin.instrument.*"
 })
-@EnableJpaRepositories({ "org.sylrsykssoft.java.musbands.admin.instrument.repository" })
+@EnableJpaRepositories(basePackages = {
+"org.sylrsykssoft.java.musbands.admin.instrument.repository" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 public class InstrumentConfiguration {
 
 }

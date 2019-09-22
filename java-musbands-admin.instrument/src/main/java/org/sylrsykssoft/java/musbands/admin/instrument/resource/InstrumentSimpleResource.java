@@ -1,9 +1,7 @@
-package org.sylrsykssoft.java.musbands.admin.musical.genre.resource;
-
-import java.beans.ConstructorProperties;
+package org.sylrsykssoft.java.musbands.admin.instrument.resource;
 
 import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminSimpleResource;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants;
+import org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -13,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * DTO BaseAdminSimple
+ * DTO Instrument
  * 
  * @author juan.gonzalez.fernandez.jgf
  *
@@ -23,7 +21,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class MusicalGenreSimpleResource extends BaseAdminSimpleResource {
+public class InstrumentSimpleResource extends BaseAdminSimpleResource {
 
 	/**
 	 * AllArgsConstructor
@@ -31,12 +29,10 @@ public class MusicalGenreSimpleResource extends BaseAdminSimpleResource {
 	 * @param entityId
 	 * @param name
 	 * 
-	 * @see MusicalGenreConstants.RESOURCE_SIMPLE_BUILDER_NAME
+	 * @see InstrumentConstants.RESOURCE_SIMPLE_BUILDER_NAME
 	 */
-	@Builder(builderMethodName = "musicalGenreSimpleResourceBuilder")
-	@ConstructorProperties({ "entityId", "name" })
-	public MusicalGenreSimpleResource(final Integer entityId, final String name) {
+	@Builder(builderMethodName = "instrumentSimpleResourceBuilder")
+	public InstrumentSimpleResource(final Integer entityId, final String name) {
 		super(entityId, name);
 	}
-
 }

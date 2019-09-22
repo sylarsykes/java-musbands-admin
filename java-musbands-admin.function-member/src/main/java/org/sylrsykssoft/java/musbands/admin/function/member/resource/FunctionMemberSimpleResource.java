@@ -1,18 +1,15 @@
 package org.sylrsykssoft.java.musbands.admin.function.member.resource;
 
 import java.beans.ConstructorProperties;
-import java.util.Set;
 
-import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
+import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminSimpleResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.Singular;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 
@@ -25,15 +22,9 @@ import lombok.experimental.FieldDefaults;
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-@AllArgsConstructor(access = AccessLevel.PUBLIC)
-@EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "synonyms")
+@EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class FunctionMemberResource extends BaseAdminResource {
-
-	// Properties
-
-	@Singular
-	Set<FunctionMemberSynonymicResource> synonyms;
+public class FunctionMemberSimpleResource extends BaseAdminSimpleResource {
 
 	// Builder
 	/**
@@ -41,17 +32,12 @@ public class FunctionMemberResource extends BaseAdminResource {
 	 * 
 	 * @param entityId
 	 * @param name
-	 * @param description
-	 * @param synonyms
 	 * 
-	 * @see FunctionMemberConstants.RESOURCE_BUILDER_NAME
+	 * @see FunctionMemberConstants.RESOURCE_SIMPLE_BUILDER_NAME
 	 */
-	@Builder(builderMethodName = "functionMemberResourceBuilder")
+	@Builder(builderMethodName = "functionMemberSimpleResourceBuilder")
 	@ConstructorProperties({ "entityId", "name", "description", "synonyms" })
-	public FunctionMemberResource(final Integer entityId, final String name, final String description,
-			final Set<FunctionMemberSynonymicResource> synonyms) {
-		super(entityId, name, description);
-
-		this.synonyms = synonyms;
+	public FunctionMemberSimpleResource(final Integer entityId, final String name) {
+		super(entityId, name);
 	}
 }
