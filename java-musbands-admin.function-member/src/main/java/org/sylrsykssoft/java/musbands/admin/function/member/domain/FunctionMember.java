@@ -14,10 +14,14 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.DynamicInsert;
-import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.envers.AuditOverride;
+import org.hibernate.envers.AuditOverrides;
+import org.hibernate.envers.Audited;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.sylrsykssoft.coreapi.framework.api.model.Base;
 import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
-import org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
+import org.sylrsykssoft.coreapi.framework.api.model.BaseAdminSimple;
+import org.sylrsykssoft.coreapi.framework.audit.domain.BaseAdminAudit;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -37,8 +41,11 @@ import lombok.experimental.FieldDefaults;
  */
 @Table(name = REPOSITORY_TABLE_NAME)
 @Entity(name = REPOSITORY_ENTITY_NAME)
-@DynamicInsert
-@DynamicUpdate
+@Audited
+@AuditOverrides(value = { @AuditOverride(forClass = BaseAdminAudit.class, isAudited = true),
+		@AuditOverride(forClass = BaseAdmin.class, isAudited = true),
+		@AuditOverride(forClass = BaseAdminSimple.class, isAudited = true),
+		@AuditOverride(forClass = Base.class, isAudited = true) })
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Builder(toBuilder = true)
@@ -46,8 +53,8 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "synonyms")
 @ToString(callSuper = true, includeFieldNames = true)
-@EntityListeners({ BaseListener.class })
-public class FunctionMember extends BaseAdmin {
+@EntityListeners({ AuditingEntityListener.class })
+public class FunctionMember extends BaseAdminAudit {
 
 	// Builder
 	/**
@@ -56,7 +63,7 @@ public class FunctionMember extends BaseAdmin {
 	 * @author juan.gonzalez.fernandez.jgf
 	 *
 	 */
-	public static class FunctionMemberBuilder extends BaseAdminBuilder<FunctionMember, FunctionMemberBuilder> {
+	public static class FunctionMemberBuilder extends BaseAdminAuditBuilder<FunctionMember, FunctionMemberBuilder> {
 		/**
 		 * {inheritDoc}
 		 */

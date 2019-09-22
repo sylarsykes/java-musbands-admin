@@ -1,7 +1,6 @@
 package org.sylrsykssoft.java.musbands.admin.musical.genre.resource;
 
 import java.beans.ConstructorProperties;
-import java.time.LocalDateTime;
 
 import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants;
@@ -39,9 +38,8 @@ public class MusicalGenreResource extends BaseAdminResource {
 	 */
 	@Builder(builderMethodName = "musicalGenreResourceBuilder")
 	@ConstructorProperties({ "entityId", "name", "description", "createdAt", "updatedAt", "removeAt" })
-	public MusicalGenreResource(final Integer entityId, final String name, final String description,
-			final LocalDateTime createdAt, final LocalDateTime updatedAt, final LocalDateTime removedAt) {
-		super(entityId, name, description, createdAt, updatedAt, removedAt);
+	public MusicalGenreResource(final Integer entityId, final String name, final String description) {
+		super(entityId, name, description);
 	}
 
 }

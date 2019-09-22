@@ -1,10 +1,10 @@
-package org.sylrsykssoft.java.musbands.admin.musical.genre.resource;
+package org.sylrsykssoft.java.musbands.admin.instrument.resource;
 
 import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 
 import org.sylrsykssoft.coreapi.framework.audit.resource.BaseAdminAuditResource;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants;
+import org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * DTO BaseAdminAudit
+ * DTO Instrument
  * 
  * @author juan.gonzalez.fernandez.jgf
  *
@@ -24,7 +24,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class MusicalGenreAuditResource extends BaseAdminAuditResource {
+public class InstrumentAuditResource extends BaseAdminAuditResource {
 
 	/**
 	 * AllArgsConstructor
@@ -35,14 +35,14 @@ public class MusicalGenreAuditResource extends BaseAdminAuditResource {
 	 * @param createdAt
 	 * @param updatedAt
 	 * 
-	 * @see MusicalGenreConstants.RESOURCE_AUDIT_BUILDER_NAME
+	 * @see InstrumentConstants.RESOURCE_AUDIT_BUILDER_NAME
 	 */
-	@Builder(builderMethodName = "musicalGenreAuditResourceBuilder")
+	@Builder(builderMethodName = "instrumentAuditResourceBuilder")
 	@ConstructorProperties({ "entityId", "name", "description", "version", "createdBy", "createdDate", "lastModifiedBy",
 	"lastModifiedDate" })
-	public MusicalGenreAuditResource(final Integer entityId, final String name, final String description,
-			final Integer version, final String createdBy, final LocalDateTime createdDate, final String lastModifiedBy,
-			final LocalDateTime lastModifiedDate) {
+	public InstrumentAuditResource(final Integer entityId, final String name, final String description,
+			final Integer version, final String createdBy,
+			final LocalDateTime createdDate, final String lastModifiedBy, final LocalDateTime lastModifiedDate) {
 		super(entityId, name, description, version, createdBy, createdDate, lastModifiedBy, lastModifiedDate);
 	}
 }

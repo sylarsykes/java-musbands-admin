@@ -13,8 +13,8 @@ import org.hibernate.envers.Audited;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.sylrsykssoft.coreapi.framework.api.model.Base;
 import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
+import org.sylrsykssoft.coreapi.framework.api.model.BaseAdminSimple;
 import org.sylrsykssoft.coreapi.framework.audit.domain.BaseAdminAudit;
-import org.sylrsykssoft.coreapi.framework.database.model.listener.BaseListener;
 
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -35,13 +35,14 @@ import lombok.ToString;
 @AuditOverrides(value = {
 		@AuditOverride(forClass = BaseAdminAudit.class, isAudited = true),
 		@AuditOverride(forClass = BaseAdmin.class, isAudited = true),
+		@AuditOverride(forClass = BaseAdminSimple.class, isAudited = true),
 		@AuditOverride(forClass = Base.class, isAudited = true) })
 @Data
 @Builder(toBuilder = true)
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-@EntityListeners({ BaseListener.class, AuditingEntityListener.class })
+@EntityListeners({ AuditingEntityListener.class })
 public class MusicalGenre extends BaseAdminAudit {
 
 	/**

@@ -1,10 +1,10 @@
 package org.sylrsykssoft.java.musbands.admin.function.member.resource;
 
 import java.beans.ConstructorProperties;
-import java.time.LocalDateTime;
 import java.util.Set;
 
 import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
+import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberSynonymicConstants;
 import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMember;
 
 import lombok.AccessLevel;
@@ -43,16 +43,15 @@ public class FunctionMemberSynonymicResource extends BaseAdminResource {
 	 * @param entityId
 	 * @param name
 	 * @param functionMembers
-	 * @param createdAt
-	 * @param updatedAt
 	 * 
+	 * @see FunctionMemberSynonymicConstants.RESOURCE_BUILDER_NAME
 	 */
 	@Builder(builderMethodName = "functionMemberSynonymicResourceBuilder")
-	@ConstructorProperties({ "entityId", "name", "description", "synonyms", "createdAt", "updatedAt", "removedAt" })
+	@ConstructorProperties({ "entityId", "name", "description", "functionMembers" })
 	public FunctionMemberSynonymicResource(final Integer entityId, final String name, final String description,
-			final Set<FunctionMember> functionMembers,
-			final LocalDateTime createdAt, final LocalDateTime updatedAt, final LocalDateTime removedAt) {
-		super(entityId, name, description, createdAt, updatedAt, removedAt);
+			final Set<FunctionMember> functionMembers) {
+		super(entityId, name, description);
+
 		this.functionMembers = functionMembers;
 	}
 }

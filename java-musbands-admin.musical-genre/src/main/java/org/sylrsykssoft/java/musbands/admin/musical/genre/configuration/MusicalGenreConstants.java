@@ -12,10 +12,22 @@ public final class MusicalGenreConstants {
 	public static final String CACHE_MANGER_BEAN_NAME = "${musbands.admin.cache.cache-manager}";
 
 	// CONTROLLER //
+	public static final String CONTROLLER_REQUEST_NAME = "musicalGenres";
 	public static final String CONTROLLER_NAME = "musicalGenreController";
 	public static final String CONTROLLER_TEST_NAME = "musicalGenreControllerTest";
+	public static final String CONTROLLER_SIMPLE_NAME = "musicalGenreSimpleController";
+	public static final String CONTROLLER_AUDIT_NAME = "musicalGenreAuditController";
+
+	// CONTROLLER BASE PATH //
 	public static final String CONTROLLER_REQUEST_MAPPING_BASE_PATH = "${spring.data.rest.base-path}";
-	public static final String CONTROLLER_REQUEST_NAME = "musicalGenres";
+	public static final String CONTROLLER_SIMPLE_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.simple.rest.base-path}";
+	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.audit.rest.base-path}";
+
+	// CONTROLLER PATH //
+	public static final String CONTROLLER_SIMPLE_REQUEST_MAPPING = CONTROLLER_SIMPLE_REQUEST_MAPPING_BASE_PATH + "/"
+			+ CONTROLLER_REQUEST_NAME;
+	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING = CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH + "/"
+			+ CONTROLLER_REQUEST_NAME;
 	public static final String CONTROLLER_REQUEST_MAPPING = CONTROLLER_REQUEST_MAPPING_BASE_PATH + "/" + CONTROLLER_REQUEST_NAME;
 	public static final String CONTROLLER_REQUEST_MAPPING_BASE_PATH_TEST = "/admin";
 	public static final String CONTROLLER_REQUEST_MAPPING_TEST = CONTROLLER_REQUEST_MAPPING_BASE_PATH_TEST + "/"
@@ -27,10 +39,6 @@ public final class MusicalGenreConstants {
 	public static final String CONTROLLER_GET_FIND_ALL_BY_EXAMPLE_SORTABLE = "/findAll/example/sort";
 	public static final String CONTROLLER_PUT_UPDATE = "/{id}";
 	public static final String CONTROLLER_DELETE_DELETE = "/{id}";
-	public static final String CONTROLLER_AUDIT_NAME = "musicalGenreAuditController";
-	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.audit.rest.base-path}";
-	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING = CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH + "/"
-			+ CONTROLLER_REQUEST_NAME;
 
 	// MAPPER //
 	public static final String MAPPER_RESOURCE_FUNCTION = "musicalGenreMapperToResourceFunction";
@@ -39,6 +47,7 @@ public final class MusicalGenreConstants {
 	public static final String MAPPER_AUDIT_ENTITY_FUNCTION = "musicalGenreAuditMapperToEntityFunction";
 	public static final String MAPPER_AUDIT_RESOURCE_FUNCTION = "musicalGenreAuditMapperToResourceFunction";
 	public static final String MAPPER_AUDIT_RESOURCE_ASSEMBLER = "musicalGenreAuditResourceAssembler";
+	public static final String MAPPER_SIMPLE_ENTITY_FUNCTION = "musicalGenreSimpleMapperToEntityFunction";
 	public static final String MAPPER_SIMPLE_RESOURCE_FUNCTION = "musicalGenreSimpleMapperToResourceFunction";
 	public static final String MAPPER_SIMPLE_RESOURCE_ASSEMBLER = "musicalGenreSimpleResourceAssembler";
 
@@ -46,6 +55,12 @@ public final class MusicalGenreConstants {
 	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_MAPPING;
 	public static final String REPOSITORY_REST_RESOURCE_PATH = CONTROLLER_REQUEST_MAPPING;
 	public static final String REPOSITORY_NAME = "musicalGenreRepository";
+	public static final String REPOSITORY_AUDIT_REST_COLLECTION_RESOURCE_REL = CONTROLLER_AUDIT_REQUEST_MAPPING;
+	public static final String REPOSITORY_AUDIT_REST_RESOURCE_PATH = CONTROLLER_AUDIT_REQUEST_MAPPING;
+	public static final String REPOSITORY_AUDIT_NAME = "musicalGenreAuditRepository";
+	public static final String REPOSITORY_SIMPLE_REST_COLLECTION_RESOURCE_REL = CONTROLLER_SIMPLE_REQUEST_MAPPING;
+	public static final String REPOSITORY_SIMPLE_REST_RESOURCE_PATH = CONTROLLER_SIMPLE_REQUEST_MAPPING;
+	public static final String REPOSITORY_SIMPLE_NAME = "musicalGenreSimpleRepository";
 	public static final String REPOSITORY_TABLE_NAME = "musical_genre";
 	public static final String REPOSITORY_ENTITY_NAME = "musicalGenre";
 
@@ -59,6 +74,7 @@ public final class MusicalGenreConstants {
 
 	// SERVICE //
 	public static final String SERVICE_NAME = "musicalGenreService";
+	public static final String SERVICE_SIMPLE_NAME = "musicalGenreSimpleService";
 	public static final String SERVICE_AUDIT_NAME = "musicalGenreAuditService";
 	public static final String CREATE_MAIL_SERVICE_NAME = "createMusicalGenreMailAdminService";
 

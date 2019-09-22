@@ -3,6 +3,7 @@ package org.sylrsykssoft.java.musbands.admin.function.member.configuration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.envers.repository.support.EnversRevisionRepositoryFactoryBean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /**
@@ -22,7 +23,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 	"org.sylrsykssoft.coreapi.framework.mail.*",
 	"org.sylrsykssoft.java.musbands.admin.function.member.*"
 })
-@EnableJpaRepositories({ "org.sylrsykssoft.java.musbands.admin.function.member.repository" })
+@EnableJpaRepositories(basePackages = {
+		"org.sylrsykssoft.java.musbands.admin.function.member.repository" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 public class FunctionMemberConfiguration {
 
 }

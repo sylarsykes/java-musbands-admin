@@ -1,7 +1,5 @@
 package org.sylrsykssoft.java.musbands.admin.instrument.resource;
 
-import java.time.LocalDateTime;
-
 import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
 import org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants;
 
@@ -37,8 +35,7 @@ public class InstrumentResource extends BaseAdminResource {
 	 * @see InstrumentConstants.RESOURCE_BUILDER_NAME
 	 */
 	@Builder(builderMethodName = "instrumentResourceBuilder")
-	public InstrumentResource(final Integer entityId, final String name, final String description,
-			final LocalDateTime createdAt, final LocalDateTime updatedAt, final LocalDateTime removedAt) {
-		super(entityId, name, description, createdAt, updatedAt, removedAt);
+	public InstrumentResource(final Integer entityId, final String name, final String description) {
+		super(entityId, name, description);
 	}
 }

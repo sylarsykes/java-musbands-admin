@@ -6,11 +6,10 @@ import static org.sylrsykssoft.java.musbands.admin.function.member.configuration
 
 import java.util.Optional;
 
-import javax.transaction.Transactional;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.sylrsykssoft.coreapi.framework.database.repository.BaseAdminRepository;
 import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMember;
 
@@ -32,6 +31,7 @@ public interface FunctionMemberRepository extends BaseAdminRepository<FunctionMe
 	 * 
 	 * @return T entity.
 	 */
-	@Query("select e from #{#entityName} e where e.name = :name and e.removedAt IS NULL")
+	@Override
+	@Query("select e from #{#entityName} e where e.name = :name")
 	Optional<FunctionMember> findByName(final String name);
 }
