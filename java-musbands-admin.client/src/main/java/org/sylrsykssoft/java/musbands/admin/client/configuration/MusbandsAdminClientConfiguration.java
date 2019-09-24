@@ -1,20 +1,15 @@
 package org.sylrsykssoft.java.musbands.admin.client.configuration;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
-import org.sylrsykssoft.coreapi.framework.web.BaseAdminRestTemplateController;
-import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants;
-import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMember;
+import org.sylrsykssoft.java.musbands.admin.client.FunctionMemberRestTemplateController;
+import org.sylrsykssoft.java.musbands.admin.client.InstrumentRestTemplateController;
+import org.sylrsykssoft.java.musbands.admin.client.MusicalGenreRestTemplateController;
 import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberResource;
-import org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants;
-import org.sylrsykssoft.java.musbands.admin.instrument.domain.Instrument;
 import org.sylrsykssoft.java.musbands.admin.instrument.resource.InstrumentResource;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants;
-import org.sylrsykssoft.java.musbands.admin.musical.genre.domain.MusicalGenre;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreResource;
 
 /**
@@ -24,11 +19,9 @@ import org.sylrsykssoft.java.musbands.admin.musical.genre.resource.MusicalGenreR
  *
  */
 @Configuration
-@ConditionalOnProperty(value = "basePath", prefix = "spring.data.rest", matchIfMissing = true)
+@ComponentScan(basePackages = { "org.sylrsykssoft.coreapi.framework.library.util",
+"org.sylrsykssoft.coreapi.framework.web.configuration" })
 public class MusbandsAdminClientConfiguration {
-
-	@Value("${spring.data.rest.base-path}")
-	private String basePath;
 
 	/**
 	 * Function Member Rest Controller Bean
@@ -39,34 +32,34 @@ public class MusbandsAdminClientConfiguration {
 	@Bean
 	@Scope("prototype")
 	@Lazy
-	public BaseAdminRestTemplateController<FunctionMemberResource, FunctionMember> functionMemberControllerRestTemplate() {
-		return new BaseAdminRestTemplateController<>(basePath,
-				FunctionMemberConstants.CONTROLLER_REQUEST_NAME, FunctionMemberResource.class);
+	public FunctionMemberRestTemplateController functionMemberControllerRestTemplate() {
+		return new FunctionMemberRestTemplateController(FunctionMemberResource.class);
 	}
 
 	/**
 	 * Instrument Rest Controller Bean
 	 * 
-	 * @return BaseAdminRestTemplateController<InstrumentResource, Instrument>
+	 * @return BaseAdminRestTemplateController<FunctionMemberResource,
+	 *         FunctionMember>
 	 */
 	@Bean
 	@Scope("prototype")
 	@Lazy
-	public BaseAdminRestTemplateController<InstrumentResource, Instrument> instrumentControllerRestTemplate() {
-		return new BaseAdminRestTemplateController<>(basePath,
-				InstrumentConstants.CONTROLLER_REQUEST_NAME, InstrumentResource.class);
+	public InstrumentRestTemplateController instrumentControllerRestTemplate() {
+		return new InstrumentRestTemplateController(InstrumentResource.class);
 	}
 
 	/**
-	 * Musical Genre Rest Controller Bean
+	 * Musical genre Rest Controller Bean
 	 * 
-	 * @return BaseAdminRestTemplateController<MusicalGenreResource, MusicalGenre>
+	 * @return BaseAdminRestTemplateController<FunctionMemberResource,
+	 *         FunctionMember>
 	 */
 	@Bean
 	@Scope("prototype")
 	@Lazy
-	public BaseAdminRestTemplateController<MusicalGenreResource, MusicalGenre> musicalGenreControllerRestTemplate() {
-		return new BaseAdminRestTemplateController<>(basePath,
-				MusicalGenreConstants.CONTROLLER_REQUEST_NAME, MusicalGenreResource.class);
+	public MusicalGenreRestTemplateController musicalGenreControllerRestTemplate() {
+		return new MusicalGenreRestTemplateController(MusicalGenreResource.class);
 	}
+
 }
