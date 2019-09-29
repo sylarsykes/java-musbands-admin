@@ -6,18 +6,17 @@ import static org.sylrsykssoft.java.musbands.admin.function.member.configuration
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
+import javax.persistence.EntityListeners;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.envers.AuditOverride;
 import org.hibernate.envers.AuditOverrides;
 import org.hibernate.envers.Audited;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.sylrsykssoft.coreapi.framework.api.model.Base;
-import org.sylrsykssoft.coreapi.framework.api.model.BaseAdmin;
 import org.sylrsykssoft.coreapi.framework.api.model.BaseAdminSimple;
-import org.sylrsykssoft.coreapi.framework.audit.domain.BaseAdminAudit;
+import org.sylrsykssoft.coreapi.framework.audit.domain.BaseAdminSimpleAudit;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -38,8 +37,7 @@ import lombok.experimental.FieldDefaults;
 @Table(name = REPOSITORY_TABLE_NAME)
 @Entity(name = REPOSITORY_ENTITY_NAME)
 @Audited
-@AuditOverrides(value = { @AuditOverride(forClass = BaseAdminAudit.class, isAudited = true),
-		@AuditOverride(forClass = BaseAdmin.class, isAudited = true),
+@AuditOverrides(value = { @AuditOverride(forClass = BaseAdminSimpleAudit.class, isAudited = true),
 		@AuditOverride(forClass = BaseAdminSimple.class, isAudited = true),
 		@AuditOverride(forClass = Base.class, isAudited = true) })
 @Data
@@ -49,7 +47,8 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class FunctionMemberSynonymic extends BaseAdminAudit {
+@EntityListeners({ AuditingEntityListener.class })
+public class FunctionMemberSynonymicSimple extends BaseAdminSimpleAudit {
 
 	// Builder
 	/**
@@ -58,13 +57,13 @@ public class FunctionMemberSynonymic extends BaseAdminAudit {
 	 * @author juan.gonzalez.fernandez.jgf
 	 *
 	 */
-	public static class FunctionMemberSynonymicBuilder
-			extends BaseAdminAuditBuilder<FunctionMemberSynonymic, FunctionMemberSynonymicBuilder> {
+	public static class FunctionMemberSynonymicSimpleBuilder
+	extends BaseAdminSimpleAuditBuilder<FunctionMemberSynonymicSimple, FunctionMemberSynonymicSimpleBuilder> {
 		/**
 		 * {inheritDoc}
 		 */
 		@Override
-		protected FunctionMemberSynonymicBuilder self() {
+		protected FunctionMemberSynonymicSimpleBuilder self() {
 			return this;
 		}
 
@@ -72,8 +71,8 @@ public class FunctionMemberSynonymic extends BaseAdminAudit {
 
 	// Properties
 
-	@ManyToMany
-	@JoinTable(name = "function_member_synonymic_functionmembers", joinColumns = @JoinColumn(name = "function_member_synonymic_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "function_member_id", referencedColumnName = "id"))
+	@ManyToMany(mappedBy = "synonyms")
+	//	@JoinTable(name = "function_member_synonymic_functionmembers", joinColumns = @JoinColumn(name = "function_member_synonymic_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "function_member_id", referencedColumnName = "id"))
 	@Singular
 	Set<FunctionMember> functionMembers;
 

@@ -43,6 +43,9 @@ module musbands.admin.function.member {
 	requires spring.data.rest.core;
 	requires spring.hateoas;
 	requires transitive spring.web;
+	requires com.fasterxml.jackson.databind;
+	requires jackson.annotations;
+	requires org.apache.commons.collections4;
 
 	uses org.sylrsykssoft.coreapi.framework.audit.controller.BaseAdminAuditController;
 	uses org.sylrsykssoft.coreapi.framework.web.BaseAdminController;

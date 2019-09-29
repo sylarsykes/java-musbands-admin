@@ -79,5 +79,5 @@ public class FunctionMember extends BaseAdminAudit {
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name = "function_member_synonymic_functionmembers", joinColumns = @JoinColumn(name = "function_member_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "function_member_synonymic_id", referencedColumnName = "id"))
 	@Singular
-	Set<FunctionMemberSynonymic> synonyms;
+	Set<FunctionMemberSynonymicSimple> synonyms;
 }

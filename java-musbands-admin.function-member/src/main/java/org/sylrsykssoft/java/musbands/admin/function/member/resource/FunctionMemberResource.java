@@ -6,6 +6,10 @@ import java.util.Set;
 import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,12 +32,14 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "synonyms")
 @ToString(callSuper = true, includeFieldNames = true)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(Include.NON_EMPTY)
 public class FunctionMemberResource extends BaseAdminResource {
 
 	// Properties
 
 	@Singular
-	Set<FunctionMemberSynonymicResource> synonyms;
+	Set<FunctionMemberSynonymicSimpleResource> synonyms;
 
 	// Builder
 	/**
@@ -49,7 +55,7 @@ public class FunctionMemberResource extends BaseAdminResource {
 	@Builder(builderMethodName = "functionMemberResourceBuilder")
 	@ConstructorProperties({ "entityId", "name", "description", "synonyms" })
 	public FunctionMemberResource(final Integer entityId, final String name, final String description,
-			final Set<FunctionMemberSynonymicResource> synonyms) {
+			final Set<FunctionMemberSynonymicSimpleResource> synonyms) {
 		super(entityId, name, description);
 
 		this.synonyms = synonyms;
