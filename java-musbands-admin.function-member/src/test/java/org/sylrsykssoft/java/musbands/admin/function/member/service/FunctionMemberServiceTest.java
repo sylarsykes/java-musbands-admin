@@ -22,7 +22,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.sylrsykssoft.java.musbands.admin.function.member.FunctionMemberApplicationTests;
 import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberTestsConfiguration;
 import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberResource;
-import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberSynonymicResource;
+import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberSynonymicSimpleResource;
 
 /**
  * Function member service test.
@@ -48,14 +48,14 @@ public class FunctionMemberServiceTest {
 		final String description = "The lead vocalist in popular music is typically the member of a group or band whose voice is the most prominent in a performance where multiple voices may be heard. The lead singer either leads the vocal ensemble, or sets against the ensemble as the dominant sound. In vocal group performances, notably in soul and gospel music, and early rock and roll, the lead singer takes the main vocal part, with a chorus provided by other band members as backing vocalists.\r\n"
 				+ "Especially in rock music, the lead singer or solo singer is often the front man or front woman, who may also play one or more instruments and is often seen as the leader or spokesman of the band by the public. As an example in rock music, Freddie Mercury was the lead singer of Queen. Similarly in soul music, Smokey Robinson was the lead singer of The Miracles. ";
 
-		final FunctionMemberSynonymicResource synonymic1 = FunctionMemberSynonymicResource
-				.functionMemberSynonymicResourceBuilder().name("Main vocalist").build();
-		final FunctionMemberSynonymicResource synonymic2 = FunctionMemberSynonymicResource
-				.functionMemberSynonymicResourceBuilder().name("Lead vocals").build();
-		final FunctionMemberSynonymicResource synonymic3 = FunctionMemberSynonymicResource
-				.functionMemberSynonymicResourceBuilder().name("Lead singer").build();
+		final FunctionMemberSynonymicSimpleResource synonymic1 = FunctionMemberSynonymicSimpleResource
+				.functionMemberSynonymicSimpleResourceBuilder().name("Main vocalist").build();
+		final FunctionMemberSynonymicSimpleResource synonymic2 = FunctionMemberSynonymicSimpleResource
+				.functionMemberSynonymicSimpleResourceBuilder().name("Lead vocals").build();
+		final FunctionMemberSynonymicSimpleResource synonymic3 = FunctionMemberSynonymicSimpleResource
+				.functionMemberSynonymicSimpleResourceBuilder().name("Lead singer").build();
 
-		final Set<FunctionMemberSynonymicResource> synonyms = new HashSet<>();
+		final Set<FunctionMemberSynonymicSimpleResource> synonyms = new HashSet<>();
 		synonyms.add(synonymic1);
 		synonyms.add(synonymic2);
 		synonyms.add(synonymic3);

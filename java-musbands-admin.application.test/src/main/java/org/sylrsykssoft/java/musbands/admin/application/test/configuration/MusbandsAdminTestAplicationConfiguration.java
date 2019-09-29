@@ -13,7 +13,8 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @Configuration
-@ComponentScan(basePackages = { "org.sylrsykssoft.java.musbands.admin.client.configuration" })
+@ComponentScan(basePackages = { "org.sylrsykssoft.coreapi.framework.library.configuration",
+		"org.sylrsykssoft.java.musbands.admin.client.configuration" })
 // Exclude database
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class })
 public class MusbandsAdminTestAplicationConfiguration {

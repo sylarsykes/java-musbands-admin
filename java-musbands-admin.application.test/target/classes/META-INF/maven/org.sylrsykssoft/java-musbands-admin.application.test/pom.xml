@@ -68,6 +68,7 @@
 		
 		<!-- Musbands Admin Dependencies -->
 	    <java-musbands.admin.client.version>${project.version}</java-musbands.admin.client.version>
+	    
 	</properties>
 	
 	<dependencies>
@@ -77,6 +78,17 @@
 			<artifactId>java-musbands.admin.client</artifactId>
 			<version>${java-musbands.admin.client.version}</version>
 		</dependency>
+		
+		<dependency>
+	    	<groupId>org.apache.commons</groupId>
+	    	<artifactId>commons-collections4</artifactId>
+	    	<version>${commons-collections4.version}</version>
+		</dependency>
+		
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>

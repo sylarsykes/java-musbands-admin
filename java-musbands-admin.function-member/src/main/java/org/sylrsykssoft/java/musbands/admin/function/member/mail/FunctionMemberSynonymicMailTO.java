@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.lang.Nullable;
-import org.sylrsykssoft.coreapi.framework.mail.domain.AdminMailTO;
+import org.sylrsykssoft.coreapi.framework.mail.domain.AdminSimpleMailTO;
 import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberSynonymicConstants;
-import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberSynonymicResource;
+import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberSynonymicSimpleResource;
 
 import lombok.Builder;
 import lombok.Data;
@@ -23,7 +23,7 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
-public class FunctionMemberSynonymicMailTO extends AdminMailTO<FunctionMemberSynonymicResource> {
+public class FunctionMemberSynonymicMailTO extends AdminSimpleMailTO<FunctionMemberSynonymicSimpleResource> {
 
 	/**
 	 * AllArgsConstructor

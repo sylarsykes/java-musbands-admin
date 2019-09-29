@@ -69,9 +69,11 @@ public class FunctionMemberService extends BaseAdminService<FunctionMember, Func
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public BaseAdminRepository<FunctionMember> getAdminRepository() {
 		return functionMemberRepository;
 	}
+
 
 	/**
 	 * {@inheritDoc}
@@ -80,7 +82,6 @@ public class FunctionMemberService extends BaseAdminService<FunctionMember, Func
 	public ModelMapperFunction<FunctionMemberResource, FunctionMember> mapperToEntity() {
 		return functionMemberMapperToEntity;
 	}
-
 
 	/**
 	 * {@inheritDoc}

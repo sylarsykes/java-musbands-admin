@@ -77,7 +77,6 @@ public final class FunctionMemberConstants {
 	public static final String SERVICE_AUDIT_NAME = "functionMemberAuditService";
 	public static final String SERVICE_SIMPLE_NAME = "functionMemberSimpleService";
 
-
 	// PRIVATE //
 	/**
 	 * The caller references the constants using

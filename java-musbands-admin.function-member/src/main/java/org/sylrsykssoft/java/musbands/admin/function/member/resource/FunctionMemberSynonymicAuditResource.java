@@ -4,7 +4,7 @@ import java.beans.ConstructorProperties;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-import org.sylrsykssoft.coreapi.framework.audit.resource.BaseAdminAuditResource;
+import org.sylrsykssoft.coreapi.framework.audit.resource.BaseAdminSimpleAuditResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberSynonymicConstants;
 
 import lombok.AccessLevel;
@@ -29,7 +29,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "functionMembers")
 @ToString(callSuper = true, includeFieldNames = true)
-public class FunctionMemberSynonymicAuditResource extends BaseAdminAuditResource {
+public class FunctionMemberSynonymicAuditResource extends BaseAdminSimpleAuditResource {
 
 	// Properties
 
@@ -53,13 +53,13 @@ public class FunctionMemberSynonymicAuditResource extends BaseAdminAuditResource
 	 * @see FunctionMemberSynonymicConstants.RESOURCE_AUDIT_BUILDER_NAME
 	 */
 	@Builder(builderMethodName = "functionMemberSynonymicAuditResourceBuilder")
-	@ConstructorProperties({ "entityId", "name", "description", "functionMembers", "version", "createdBy",
+	@ConstructorProperties({ "entityId", "name", "functionMembers", "version", "createdBy",
 		"createdDate", "lastModifiedBy", "lastModifiedDate" })
-	public FunctionMemberSynonymicAuditResource(final Integer entityId, final String name, final String description,
+	public FunctionMemberSynonymicAuditResource(final Integer entityId, final String name,
 			final Set<FunctionMemberAuditResource> functionMembers, final Integer version, final String createdBy,
 			final LocalDateTime createdDate, final String lastModifiedBy,
 			final LocalDateTime lastModifiedDate) {
-		super(entityId, name, description, version, createdBy, createdDate, lastModifiedBy, lastModifiedDate);
+		super(entityId, name, version, createdBy, createdDate, lastModifiedBy, lastModifiedDate);
 
 		this.functionMembers = functionMembers;
 	}

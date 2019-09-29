@@ -3,6 +3,9 @@ package org.sylrsykssoft.java.musbands.admin.function.member.configuration;
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_AUDIT_ENTITY_FUNCTION;
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_AUDIT_RESOURCE_ASSEMBLER;
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_AUDIT_RESOURCE_FUNCTION;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_ENTITY_FUNCTION;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_RESOURCE_ASSEMBLER;
+import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_RESOURCE_FUNCTION;
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_SIMPLE_ENTITY_FUNCTION;
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_SIMPLE_RESOURCE_ASSEMBLER;
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.MAPPER_SIMPLE_RESOURCE_FUNCTION;
@@ -77,7 +80,7 @@ public class FunctionMemberMapperConfiguration {
 	 *
 	 * @return the model mapper function
 	 */
-	@Bean(FunctionMemberConstants.MAPPER_ENTITY_FUNCTION)
+	@Bean(MAPPER_ENTITY_FUNCTION)
 	@Lazy(value = true)
 	public ModelMapperFunction<FunctionMemberResource, FunctionMember> functionMemberMapperToEntityFunction() {
 		return new ModelMapperFunction<>(FunctionMemberResource.class, FunctionMember.class);
@@ -88,7 +91,7 @@ public class FunctionMemberMapperConfiguration {
 	 *
 	 * @return the model mapper function
 	 */
-	@Bean(FunctionMemberConstants.MAPPER_RESOURCE_FUNCTION)
+	@Bean(MAPPER_RESOURCE_FUNCTION)
 	@Lazy(value = true)
 	public ModelMapperFunction<FunctionMember, FunctionMemberResource> functionMemberMapperToResourceFunction() {
 		return new ModelMapperFunction<>(FunctionMember.class,
@@ -100,7 +103,7 @@ public class FunctionMemberMapperConfiguration {
 	 *
 	 * @return the model mapper function
 	 */
-	@Bean(FunctionMemberConstants.MAPPER_RESOURCE_ASSEMBLER)
+	@Bean(MAPPER_RESOURCE_ASSEMBLER)
 	@Lazy(value = true)
 	public FunctionMemberResourceAssembler functionMemberResourceAssembler() {
 		return new FunctionMemberResourceAssembler(FunctionMemberController.class, FunctionMember.class,
