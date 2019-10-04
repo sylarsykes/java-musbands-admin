@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
+import org.sylrsykssoft.coreapi.framework.web.configuration.annotation.EnableCoreApiFrameworkWebInternationalization;
 
 import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties;
 
@@ -28,6 +29,7 @@ import com.ulisesbocchio.jasyptspringboot.annotation.EnableEncryptableProperties
 	"org.sylrsykssoft.java.musbands.admin.instrument.*", "org.sylrsykssoft.java.musbands.admin.musical.genre.*" })
 @EnableCaching
 @EnableEncryptableProperties
+@EnableCoreApiFrameworkWebInternationalization
 @PropertySource("classpath:jasypt.properties")
 public class MusbandsAdminAplicationConfiguration {
 
