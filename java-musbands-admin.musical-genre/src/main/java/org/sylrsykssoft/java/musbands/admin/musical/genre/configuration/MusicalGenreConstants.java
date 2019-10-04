@@ -1,5 +1,9 @@
 package org.sylrsykssoft.java.musbands.admin.musical.genre.configuration;
 
+import static org.sylrsykssoft.coreapi.framework.audit.configuration.BaseAdminAuditConstants.CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH;
+import static org.sylrsykssoft.coreapi.framework.web.configuration.BaseAdminConstants.CONTROLLER_REQUEST_MAPPING_BASE_PATH;
+import static org.sylrsykssoft.coreapi.framework.web.configuration.BaseAdminConstants.CONTROLLER_SIMPLE_REQUEST_MAPPING_BASE_PATH;
+
 /**
  * MusicalGenreConstants
  * 
@@ -17,11 +21,6 @@ public final class MusicalGenreConstants {
 	public static final String CONTROLLER_TEST_NAME = "musicalGenreControllerTest";
 	public static final String CONTROLLER_SIMPLE_NAME = "musicalGenreSimpleController";
 	public static final String CONTROLLER_AUDIT_NAME = "musicalGenreAuditController";
-
-	// CONTROLLER BASE PATH //
-	public static final String CONTROLLER_REQUEST_MAPPING_BASE_PATH = "${spring.data.rest.base-path}";
-	public static final String CONTROLLER_SIMPLE_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.simple.rest.base-path}";
-	public static final String CONTROLLER_AUDIT_REQUEST_MAPPING_BASE_PATH = "${coreapi.framework.audit.rest.base-path}";
 
 	// CONTROLLER PATH //
 	public static final String CONTROLLER_SIMPLE_REQUEST_MAPPING = CONTROLLER_SIMPLE_REQUEST_MAPPING_BASE_PATH + "/"
