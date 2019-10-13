@@ -11,6 +11,8 @@ import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMembe
 import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberAuditResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberAuditService;
 
+import io.swagger.annotations.Api;
+
 /**
  * Rest Controller for Function Member API
  * 
@@ -21,8 +23,9 @@ import org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemb
  */
 @RestController(CONTROLLER_AUDIT_NAME)
 @RequestMapping(CONTROLLER_AUDIT_REQUEST_MAPPING)
+@Api(value = "Function Member Audit API")
 public class FunctionMemberAuditController
-		extends BaseAdminAuditController<FunctionMemberAuditResource, FunctionMember> {
+extends BaseAdminAuditController<FunctionMemberAuditResource, FunctionMember> {
 
 	@Autowired
 	private FunctionMemberAuditService functionMemberService;

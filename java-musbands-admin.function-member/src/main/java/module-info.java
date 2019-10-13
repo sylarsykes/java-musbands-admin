@@ -20,6 +20,7 @@ module musbands.admin.function.member {
 
 	// Core API Framework Module Dependencies
 	requires coreapi.framework.library;
+	requires coreapi.framework.swagger;
 	requires coreapi.framework.api;
 	requires coreapi.framework.database;
 	requires transitive coreapi.framework.audit;
@@ -28,6 +29,10 @@ module musbands.admin.function.member {
 	requires coreapi.framework.web;
 
 	requires lombok;
+	requires com.fasterxml.jackson.databind;
+	requires jackson.annotations;
+	requires org.apache.commons.collections4;
+
 	requires spring.beans;
 	requires spring.context;
 	requires transitive spring.context.support;
@@ -43,9 +48,15 @@ module musbands.admin.function.member {
 	requires spring.data.rest.core;
 	requires spring.hateoas;
 	requires transitive spring.web;
-	requires com.fasterxml.jackson.databind;
-	requires jackson.annotations;
-	requires org.apache.commons.collections4;
+
+	// Swagger dependencies
+	requires com.google.common;
+	requires spring.plugin.core;
+	requires springfox.swagger2;
+	requires springfox.core;
+	requires springfox.spi;
+	requires transitive springfox.spring.web;
+	requires swagger.annotations;
 
 	uses org.sylrsykssoft.coreapi.framework.audit.controller.BaseAdminAuditController;
 	uses org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
@@ -70,12 +81,12 @@ module musbands.admin.function.member {
 	uses org.sylrsykssoft.coreapi.framework.service.BaseAdminSimpleService;
 
 	provides org.sylrsykssoft.coreapi.framework.audit.service.IAdminAuditService
-			with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberAuditService;
+	with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberAuditService;
 	provides org.sylrsykssoft.coreapi.framework.service.IAdminService
-			with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberService;
+	with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberService;
 	provides org.sylrsykssoft.coreapi.framework.service.IAdminSimpleService
-			with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberSimpleService;
+	with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberSimpleService;
 	provides org.sylrsykssoft.coreapi.framework.library.mapper.IMapperFunction
-			with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberService,
-			org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberSimpleService;
+	with org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberService,
+	org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberSimpleService;
 }

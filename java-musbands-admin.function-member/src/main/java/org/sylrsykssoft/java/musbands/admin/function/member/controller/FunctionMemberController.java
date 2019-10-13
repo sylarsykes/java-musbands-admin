@@ -11,6 +11,8 @@ import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMembe
 import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberService;
 
+import io.swagger.annotations.Api;
+
 /**
  * Rest Controller for Function Member API
  * 
@@ -21,6 +23,7 @@ import org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemb
  */
 @RestController(CONTROLLER_NAME)
 @RequestMapping(CONTROLLER_REQUEST_MAPPING)
+@Api(value = "Function Member API")
 public class FunctionMemberController extends BaseAdminController<FunctionMemberResource, FunctionMember> {
 
 	@Autowired
@@ -32,6 +35,7 @@ public class FunctionMemberController extends BaseAdminController<FunctionMember
 	 * 
 	 * @return BaseAdminService<T, R>
 	 */
+	@Override
 	public FunctionMemberService getAdminService() {
 		return functionMemberService;
 	}

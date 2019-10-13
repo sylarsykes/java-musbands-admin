@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,10 +36,12 @@ import lombok.experimental.FieldDefaults;
 @ToString(callSuper = true, includeFieldNames = true)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(Include.NON_EMPTY)
+@ApiModel(value = "Function Member", description = "Function member resource.", parent = BaseAdminResource.class)
 public class FunctionMemberResource extends BaseAdminResource {
 
 	// Properties
 
+	@ApiModelProperty(name = "synonyms", value = "List of function member synonims", dataType = "Set<FunctionMemberSynonymicSimpleResource>")
 	@Singular
 	Set<FunctionMemberSynonymicSimpleResource> synonyms;
 
