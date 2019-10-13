@@ -24,7 +24,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 	"org.sylrsykssoft.java.musbands.admin.function.member.*"
 })
 @EnableJpaRepositories(basePackages = {
-		"org.sylrsykssoft.java.musbands.admin.function.member.repository" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
+"org.sylrsykssoft.java.musbands.admin.function.member.repository" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 public class FunctionMemberConfiguration {
 
 }

@@ -20,6 +20,7 @@ module musbands.admin.instrument {
 
 	// Core API Framework Module Dependencies
 	requires coreapi.framework.library;
+	requires coreapi.framework.swagger;
 	requires coreapi.framework.api;
 	requires coreapi.framework.database;
 	requires transitive coreapi.framework.audit;
@@ -28,6 +29,10 @@ module musbands.admin.instrument {
 	requires coreapi.framework.web;
 
 	requires lombok;
+	requires com.fasterxml.jackson.databind;
+	requires jackson.annotations;
+	requires org.apache.commons.collections4;
+
 	requires spring.beans;
 	requires spring.context;
 	requires transitive spring.context.support;
@@ -43,6 +48,14 @@ module musbands.admin.instrument {
 	requires spring.data.rest.core;
 	requires spring.hateoas;
 	requires transitive spring.web;
+
+	// Swagger dependencies
+	requires com.google.common;
+	requires spring.plugin.core;
+	requires springfox.swagger2;
+	requires springfox.core;
+	requires springfox.spi;
+	requires transitive springfox.spring.web;
 
 	uses org.sylrsykssoft.coreapi.framework.audit.controller.BaseAdminAuditController;
 	uses org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
@@ -67,12 +80,12 @@ module musbands.admin.instrument {
 	uses org.sylrsykssoft.coreapi.framework.service.BaseAdminSimpleService;
 
 	provides org.sylrsykssoft.coreapi.framework.audit.service.IAdminAuditService
-			with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentAuditService;
+	with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentAuditService;
 	provides org.sylrsykssoft.coreapi.framework.service.IAdminService
-			with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentService;
+	with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentService;
 	provides org.sylrsykssoft.coreapi.framework.service.IAdminSimpleService
-			with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentSimpleService;
+	with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentSimpleService;
 	provides org.sylrsykssoft.coreapi.framework.library.mapper.IMapperFunction
-			with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentService,
-			org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentSimpleService;
+	with org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentService,
+	org.sylrsykssoft.java.musbands.admin.instrument.service.InstrumentSimpleService;
 }

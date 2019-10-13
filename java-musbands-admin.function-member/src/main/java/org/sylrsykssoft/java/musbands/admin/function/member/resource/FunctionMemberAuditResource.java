@@ -7,6 +7,8 @@ import java.util.Set;
 import org.sylrsykssoft.coreapi.framework.audit.resource.BaseAdminAuditResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,10 +31,12 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true, exclude = "synonyms")
 @ToString(callSuper = true, includeFieldNames = true)
+@ApiModel(value = "Function Member Audit", description = "Function member resource auditable.", parent = BaseAdminAuditResource.class)
 public class FunctionMemberAuditResource extends BaseAdminAuditResource {
 
 	// Properties
 
+	@ApiModelProperty(name = "synonyms", value = "List of function member synonims", dataType = "Set<FunctionMemberSynonymicSimpleResource>")
 	@Singular
 	Set<FunctionMemberSynonymicAuditResource> synonyms;
 

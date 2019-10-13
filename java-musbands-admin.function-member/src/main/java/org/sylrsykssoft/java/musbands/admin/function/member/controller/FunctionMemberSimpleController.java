@@ -11,6 +11,8 @@ import org.sylrsykssoft.java.musbands.admin.function.member.domain.FunctionMembe
 import org.sylrsykssoft.java.musbands.admin.function.member.resource.FunctionMemberSimpleResource;
 import org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemberSimpleService;
 
+import io.swagger.annotations.Api;
+
 /**
  * Rest Controller for Function Member API
  * 
@@ -21,6 +23,7 @@ import org.sylrsykssoft.java.musbands.admin.function.member.service.FunctionMemb
  */
 @RestController(CONTROLLER_SIMPLE_NAME)
 @RequestMapping(CONTROLLER_SIMPLE_REQUEST_MAPPING)
+@Api(value = "Function Member Simple API")
 public class FunctionMemberSimpleController
 extends BaseAdminSimpleController<FunctionMemberSimpleResource, FunctionMember> {
 
