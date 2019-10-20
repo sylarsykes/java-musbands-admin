@@ -14,15 +14,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @Configuration
 @EntityScan("org.sylrsykssoft.java.musbands.admin.musical.genre.domain")
-@ComponentScan({
-	"org.sylrsykssoft.coreapi.framework.library.*",
-	"org.sylrsykssoft.coreapi.framework.api.*",
-	"org.sylrsykssoft.coreapi.framework.database.*",
-	"org.sylrsykssoft.coreapi.framework.service.*",
-	"org.sylrsykssoft.coreapi.framework.web.*",
-	"org.sylrsykssoft.coreapi.framework.mail.*",
-	"org.sylrsykssoft.java.musbands.admin.musical.genre.*"
-})
+@ComponentScan({ "org.sylrsykssoft.coreapi.framework.library.*", "org.sylrsykssoft.coreapi.framework.api.*",
+	"org.sylrsykssoft.coreapi.framework.audit.*", "org.sylrsykssoft.coreapi.framework.database.*",
+	"org.sylrsykssoft.coreapi.framework.service.*", "org.sylrsykssoft.coreapi.framework.web.*",
+	"org.sylrsykssoft.coreapi.framework.mail.*", "org.sylrsykssoft.java.musbands.admin.musical.genre.*" })
 @EnableJpaRepositories(basePackages = {
 "org.sylrsykssoft.java.musbands.admin.musical.genre.repository" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 public class MusicalGenreConfiguration {

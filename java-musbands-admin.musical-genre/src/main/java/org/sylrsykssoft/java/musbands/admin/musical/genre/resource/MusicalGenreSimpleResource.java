@@ -5,6 +5,7 @@ import java.beans.ConstructorProperties;
 import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminSimpleResource;
 import org.sylrsykssoft.java.musbands.admin.musical.genre.configuration.MusicalGenreConstants;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +24,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
+@ApiModel(value = "MusicalGenreSimpleResource", description = "Musical genre simple resource.", parent = BaseAdminSimpleResource.class)
 public class MusicalGenreSimpleResource extends BaseAdminSimpleResource {
 
 	/**

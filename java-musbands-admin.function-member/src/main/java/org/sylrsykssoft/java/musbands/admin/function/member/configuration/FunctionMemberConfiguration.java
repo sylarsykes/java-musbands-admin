@@ -14,15 +14,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  */
 @Configuration
 @EntityScan("org.sylrsykssoft.java.musbands.admin.function.member.domain")
-@ComponentScan({
-	"org.sylrsykssoft.coreapi.framework.library.*",
-	"org.sylrsykssoft.coreapi.framework.api.*",
-	"org.sylrsykssoft.coreapi.framework.database.*",
-	"org.sylrsykssoft.coreapi.framework.service.*",
-	"org.sylrsykssoft.coreapi.framework.web.*",
-	"org.sylrsykssoft.coreapi.framework.mail.*",
-	"org.sylrsykssoft.java.musbands.admin.function.member.*"
-})
+@ComponentScan({ "org.sylrsykssoft.coreapi.framework.library.*", "org.sylrsykssoft.coreapi.framework.api.*",
+	"org.sylrsykssoft.coreapi.framework.audit.*", "org.sylrsykssoft.coreapi.framework.database.*",
+	"org.sylrsykssoft.coreapi.framework.service.*", "org.sylrsykssoft.coreapi.framework.web.*",
+	"org.sylrsykssoft.coreapi.framework.mail.*", "org.sylrsykssoft.java.musbands.admin.function.member.*" })
 @EnableJpaRepositories(basePackages = {
 "org.sylrsykssoft.java.musbands.admin.function.member.repository" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
 public class FunctionMemberConfiguration {

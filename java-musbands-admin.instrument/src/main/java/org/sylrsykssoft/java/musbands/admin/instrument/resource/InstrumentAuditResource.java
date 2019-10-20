@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import org.sylrsykssoft.coreapi.framework.audit.resource.BaseAdminAuditResource;
 import org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
+@ApiModel(value = "InstrumentAuditResource", description = "Instrument audit resource.", parent = BaseAdminAuditResource.class)
 public class InstrumentAuditResource extends BaseAdminAuditResource {
 
 	/**

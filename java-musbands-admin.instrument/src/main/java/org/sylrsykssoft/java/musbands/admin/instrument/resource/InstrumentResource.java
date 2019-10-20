@@ -3,6 +3,7 @@ package org.sylrsykssoft.java.musbands.admin.instrument.resource;
 import org.sylrsykssoft.coreapi.framework.api.resource.BaseAdminResource;
 import org.sylrsykssoft.java.musbands.admin.instrument.configuration.InstrumentConstants;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -21,6 +22,7 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 @ToString(callSuper = true, includeFieldNames = true)
+@ApiModel(value = "InstrumentResource", description = "Instrument resource.", parent = BaseAdminResource.class)
 public class InstrumentResource extends BaseAdminResource {
 
 	/**
