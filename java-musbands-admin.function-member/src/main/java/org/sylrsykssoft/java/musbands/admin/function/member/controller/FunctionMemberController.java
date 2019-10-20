@@ -4,6 +4,8 @@ import static org.sylrsykssoft.java.musbands.admin.function.member.configuration
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_REQUEST_MAPPING;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.MediaTypes;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
@@ -17,18 +19,15 @@ import io.swagger.annotations.Api;
  * Rest Controller for Function Member API
  * 
  * @author juan.gonzalez.fernandez.jgf
- * 
- * @see https://restfulapi.net/http-methods/
- *
  */
 @RestController(CONTROLLER_NAME)
 @RequestMapping(CONTROLLER_REQUEST_MAPPING)
-@Api(value = "Function Member API")
+@Api(value = "Function Member API", tags = "Function Member API", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE
++ ", " + MediaTypes.HAL_JSON_VALUE)
 public class FunctionMemberController extends BaseAdminController<FunctionMemberResource, FunctionMember> {
 
 	@Autowired
 	private FunctionMemberService functionMemberService;
-
 
 	/**
 	 * Getter admin service implementation
@@ -39,5 +38,4 @@ public class FunctionMemberController extends BaseAdminController<FunctionMember
 	public FunctionMemberService getAdminService() {
 		return functionMemberService;
 	}
-
 }

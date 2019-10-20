@@ -1,7 +1,5 @@
 package org.sylrsykssoft.java.musbands.admin.application.configuration;
 
-import static springfox.documentation.builders.PathSelectors.regex;
-
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -9,6 +7,7 @@ import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.hateoas.MediaTypes;
@@ -18,6 +17,7 @@ import org.sylrsykssoft.coreapi.framework.swagger.BasePathAwareRelativePathProvi
 import org.sylrsykssoft.coreapi.framework.swagger.configuration.property.CoreApiFrameworkSwagger2ConfigProperties;
 
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -35,14 +35,20 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Swagger2 configuration
  * 
  * @author juan.gonzalez.fernandez.jgf
- *
  */
 @Configuration
+// Scan packages for create Docket (@see musbandsAdminApi)
+@ComponentScan({ "org.sylrsykssoft.coreapi.framework.api.*", "org.sylrsykssoft.coreapi.framework.audit.*",
+	"org.sylrsykssoft.coreapi.framework.web.*", "org.sylrsykssoft.java.musbands.admin.function.member.*",
+	"org.sylrsykssoft.java.musbands.admin.instrument.*", "org.sylrsykssoft.java.musbands.admin.musical.genre.*" })
 @PropertySource("classpath:swagger2.properties")
 @EnableConfigurationProperties(CoreApiFrameworkSwagger2ConfigProperties.class)
 @EnableSwagger2
 public class MusbandsAdminSwagger2Configuration {
 
+	/**
+	 * Configuration swagger properties
+	 */
 	@Autowired
 	private CoreApiFrameworkSwagger2ConfigProperties coreApiFrameworkSwagger2ConfigProperties;
 
@@ -59,32 +65,28 @@ public class MusbandsAdminSwagger2Configuration {
 						coreApiFrameworkSwagger2ConfigProperties.getContactUri(),
 						coreApiFrameworkSwagger2ConfigProperties.getContactEmail()))
 				.license(coreApiFrameworkSwagger2ConfigProperties.getLicense())
-				.licenseUrl(coreApiFrameworkSwagger2ConfigProperties.getLicenseUri())
-				.build();
+				.licenseUrl(coreApiFrameworkSwagger2ConfigProperties.getLicenseUri()).build();
 	}
 
 	/**
-	 * Docket api bean
+	 * Musbands Admin API
 	 * 
 	 * @return Docket
 	 */
 	@Bean
 	public Docket musbandsAdminApi() {
 		return new Docket(DocumentationType.SWAGGER_2)
-				//				.host("www.mydomain.com")
+				// .host("www.mydomain.com")
 				.pathProvider(new BasePathAwareRelativePathProvider(
 						"/api/admin/" + coreApiFrameworkSwagger2ConfigProperties.getApiVersion()))
-				.apiInfo(apiInfo())
-				.consumes(new HashSet<>(Arrays.asList(MediaType.APPLICATION_JSON_VALUE)))
+				.apiInfo(apiInfo()).consumes(new HashSet<>(Arrays.asList(MediaType.APPLICATION_JSON_VALUE)))
 				.produces(new HashSet<>(Arrays.asList(MediaTypes.HAL_JSON_VALUE, MediaType.APPLICATION_JSON_VALUE)))
 				.select()
-				.apis(RequestHandlerSelectors
-						.basePackage("org.sylrsykssoft.java.musbands.admin.function.member.controller"))
-				.apis(RequestHandlerSelectors.basePackage("org.sylrsykssoft.java.musbands.admin.instrument.controller"))
-				.apis(RequestHandlerSelectors
-						.basePackage("org.sylrsykssoft.java.musbands.admin.musical.genre.controller"))
-				.paths(regex("/api/admin/" + coreApiFrameworkSwagger2ConfigProperties.getApiVersion() + "/.*")).build()
-				.directModelSubstitute(LocalDate.class, String.class).genericModelSubstitutes(ResponseEntity.class)
+				// Musbands Admin Apis
+				.apis(RequestHandlerSelectors.basePackage("org.sylrsykssoft.java.musbands.admin"))
+				.paths(PathSelectors.any())
+				.build().directModelSubstitute(LocalDate.class, String.class)
+				.genericModelSubstitutes(ResponseEntity.class)
 				.useDefaultResponseMessages(
 						Boolean.valueOf(coreApiFrameworkSwagger2ConfigProperties.getUseDefaultResponseMessages()))
 				.enableUrlTemplating(
@@ -115,8 +117,8 @@ public class MusbandsAdminSwagger2Configuration {
 				.maxDisplayedTags(Integer.valueOf(coreApiFrameworkSwagger2ConfigProperties.getMaxDisplayedTags()))
 				.operationsSorter(OperationsSorter.ALPHA)
 				.showExtensions(Boolean.valueOf(coreApiFrameworkSwagger2ConfigProperties.getShowExtensions()))
-				.tagsSorter(TagsSorter.ALPHA)
-				.supportedSubmitMethods(UiConfiguration.Constants.DEFAULT_SUBMIT_METHODS).validatorUrl(null).build();
+				.tagsSorter(TagsSorter.ALPHA).supportedSubmitMethods(UiConfiguration.Constants.DEFAULT_SUBMIT_METHODS)
+				.validatorUrl(null).build();
 	}
 
 }

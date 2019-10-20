@@ -4,6 +4,8 @@ import static org.sylrsykssoft.java.musbands.admin.function.member.configuration
 import static org.sylrsykssoft.java.musbands.admin.function.member.configuration.FunctionMemberConstants.CONTROLLER_SIMPLE_REQUEST_MAPPING;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.MediaTypes;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.sylrsykssoft.coreapi.framework.web.BaseAdminSimpleController;
@@ -17,13 +19,11 @@ import io.swagger.annotations.Api;
  * Rest Controller for Function Member API
  * 
  * @author juan.gonzalez.fernandez.jgf
- * 
- * @see https://restfulapi.net/http-methods/
- *
  */
 @RestController(CONTROLLER_SIMPLE_NAME)
 @RequestMapping(CONTROLLER_SIMPLE_REQUEST_MAPPING)
-@Api(value = "Function Member Simple API")
+@Api(value = "Function Member Simple API", tags = "Function Member Simple API", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE
+		+ ", " + MediaTypes.HAL_JSON_VALUE)
 public class FunctionMemberSimpleController
 extends BaseAdminSimpleController<FunctionMemberSimpleResource, FunctionMember> {
 
