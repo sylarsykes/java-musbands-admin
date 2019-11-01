@@ -9,6 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.hateoas.MediaTypes;
 import org.springframework.http.MediaType;
@@ -16,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.sylrsykssoft.coreapi.framework.swagger.BasePathAwareRelativePathProvider;
 import org.sylrsykssoft.coreapi.framework.swagger.configuration.property.CoreApiFrameworkSwagger2ConfigProperties;
 
+import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -44,6 +46,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @PropertySource("classpath:swagger2.properties")
 @EnableConfigurationProperties(CoreApiFrameworkSwagger2ConfigProperties.class)
 @EnableSwagger2
+@Import({ BeanValidatorPluginsConfiguration.class })
 public class MusbandsAdminSwagger2Configuration {
 
 	/**
