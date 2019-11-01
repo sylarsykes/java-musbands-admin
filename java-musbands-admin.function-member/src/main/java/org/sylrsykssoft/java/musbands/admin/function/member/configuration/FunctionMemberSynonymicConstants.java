@@ -49,14 +49,14 @@ public final class FunctionMemberSynonymicConstants {
 	public static final String MAPPER_SIMPLE_RESOURCE_ASSEMBLER = "functionMemberSynonymicSimpleResourceAssembler";
 
 	// REPOSITORY //
-	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_MAPPING;
-	public static final String REPOSITORY_REST_RESOURCE_PATH = CONTROLLER_REQUEST_MAPPING;
+	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_NAME;
+	public static final String REPOSITORY_REST_RESOURCE_PATH = CONTROLLER_REQUEST_NAME;
 	public static final String REPOSITORY_NAME = "functionMemberSynonymicRepository";
-	public static final String REPOSITORY_AUDIT_REST_COLLECTION_RESOURCE_REL = CONTROLLER_AUDIT_REQUEST_MAPPING;
-	public static final String REPOSITORY_AUDIT_REST_RESOURCE_PATH = CONTROLLER_AUDIT_REQUEST_MAPPING;
+	public static final String REPOSITORY_AUDIT_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_NAME;
+	public static final String REPOSITORY_AUDIT_REST_RESOURCE_PATH = CONTROLLER_REQUEST_NAME;
 	public static final String REPOSITORY_AUDIT_NAME = "functionMemberSynonymicAuditRepository";
-	public static final String REPOSITORY_SIMPLE_REST_COLLECTION_RESOURCE_REL = CONTROLLER_SIMPLE_REQUEST_MAPPING;
-	public static final String REPOSITORY_SIMPLE_REST_RESOURCE_PATH = CONTROLLER_SIMPLE_REQUEST_MAPPING;
+	public static final String REPOSITORY_SIMPLE_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_NAME;
+	public static final String REPOSITORY_SIMPLE_REST_RESOURCE_PATH = CONTROLLER_REQUEST_NAME;
 	public static final String REPOSITORY_SIMPLE_NAME = "functionMemberSynonymicSimpleRepository";
 	public static final String REPOSITORY_TABLE_NAME = "function_member_synonymic";
 	public static final String REPOSITORY_ENTITY_NAME = "functionMemberSynonymic";

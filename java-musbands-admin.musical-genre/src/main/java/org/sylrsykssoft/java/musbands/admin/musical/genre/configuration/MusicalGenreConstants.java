@@ -51,14 +51,14 @@ public final class MusicalGenreConstants {
 	public static final String MAPPER_SIMPLE_RESOURCE_ASSEMBLER = "musicalGenreSimpleResourceAssembler";
 
 	// REPOSITORY //
-	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_MAPPING;
-	public static final String REPOSITORY_REST_RESOURCE_PATH = CONTROLLER_REQUEST_MAPPING;
+	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_NAME;
+	public static final String REPOSITORY_REST_RESOURCE_PATH = CONTROLLER_REQUEST_NAME;
 	public static final String REPOSITORY_NAME = "musicalGenreRepository";
-	public static final String REPOSITORY_AUDIT_REST_COLLECTION_RESOURCE_REL = CONTROLLER_AUDIT_REQUEST_MAPPING;
-	public static final String REPOSITORY_AUDIT_REST_RESOURCE_PATH = CONTROLLER_AUDIT_REQUEST_MAPPING;
+	public static final String REPOSITORY_AUDIT_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_NAME;
+	public static final String REPOSITORY_AUDIT_REST_RESOURCE_PATH = CONTROLLER_REQUEST_NAME;
 	public static final String REPOSITORY_AUDIT_NAME = "musicalGenreAuditRepository";
-	public static final String REPOSITORY_SIMPLE_REST_COLLECTION_RESOURCE_REL = CONTROLLER_SIMPLE_REQUEST_MAPPING;
-	public static final String REPOSITORY_SIMPLE_REST_RESOURCE_PATH = CONTROLLER_SIMPLE_REQUEST_MAPPING;
+	public static final String REPOSITORY_SIMPLE_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_NAME;
+	public static final String REPOSITORY_SIMPLE_REST_RESOURCE_PATH = CONTROLLER_REQUEST_NAME;
 	public static final String REPOSITORY_SIMPLE_NAME = "musicalGenreSimpleRepository";
 	public static final String REPOSITORY_TABLE_NAME = "musical_genre";
 	public static final String REPOSITORY_ENTITY_NAME = "musicalGenre";
