@@ -17,6 +17,7 @@ module musbands.admin.function.member {
 	requires java.desktop;
 	requires java.persistence;
 	requires java.mail;
+	requires transitive javax.servlet.api;
 
 	// Core API Framework Module Dependencies
 	requires coreapi.framework.library;
@@ -26,6 +27,7 @@ module musbands.admin.function.member {
 	requires transitive coreapi.framework.audit;
 	requires transitive coreapi.framework.mail;
 	requires coreapi.framework.service;
+	requires coreapi.framework.security;
 	requires coreapi.framework.web;
 
 	requires lombok;
@@ -57,6 +59,7 @@ module musbands.admin.function.member {
 	requires springfox.spi;
 	requires transitive springfox.spring.web;
 	requires swagger.annotations;
+	requires spring.security.config;
 
 	uses org.sylrsykssoft.coreapi.framework.audit.controller.BaseAdminAuditController;
 	uses org.sylrsykssoft.coreapi.framework.web.BaseAdminController;
