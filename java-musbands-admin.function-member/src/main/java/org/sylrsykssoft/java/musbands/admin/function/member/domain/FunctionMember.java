@@ -58,7 +58,7 @@ public class FunctionMember extends BaseAdminAudit {
 
 	// Builder
 	/**
-	 * MusicalGenreBuilder
+	 * FunctionMemberBuilder
 	 * 
 	 * @author juan.gonzalez.fernandez.jgf
 	 *

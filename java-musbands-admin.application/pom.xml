@@ -70,6 +70,7 @@
 	    <java-musbands.admin.function-member.version>${project.version}</java-musbands.admin.function-member.version>
 	    <java-musbands.admin.instrument.version>${project.version}</java-musbands.admin.instrument.version>
 	    <java-musbands.admin.musical-genre.version>${project.version}</java-musbands.admin.musical-genre.version>
+	    <java-musbands.admin.users.version>${project.version}</java-musbands.admin.users.version>
 	    
 	    <!-- Liquibase SQL Data -->
 	    <liquibase-hibernate5.version>3.6</liquibase-hibernate5.version>
@@ -123,6 +124,11 @@
 			<groupId>org.sylrsykssoft</groupId>
 			<artifactId>java-musbands.admin.musical-genre</artifactId>
 			<version>${java-musbands.admin.musical-genre.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
+			<artifactId>java-musbands.admin.users</artifactId>
+			<version>${java-musbands.admin.users.version}</version>
 		</dependency>
 		
 	</dependencies>

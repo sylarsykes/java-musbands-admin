@@ -58,7 +58,7 @@ public class FunctionMemberSynonymicSimple extends BaseAdminSimpleAudit {
 	 *
 	 */
 	public static class FunctionMemberSynonymicSimpleBuilder
-	extends BaseAdminSimpleAuditBuilder<FunctionMemberSynonymicSimple, FunctionMemberSynonymicSimpleBuilder> {
+			extends BaseAdminSimpleAuditBuilder<FunctionMemberSynonymicSimple, FunctionMemberSynonymicSimpleBuilder> {
 		/**
 		 * {inheritDoc}
 		 */
