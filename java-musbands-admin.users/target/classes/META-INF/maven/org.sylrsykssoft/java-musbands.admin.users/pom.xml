@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>org.sylrsykssoft</groupId>
+    <artifactId>java-musbands-admin</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <relativePath>../</relativePath>
+  </parent>
+
+  <artifactId>java-musbands.admin.users</artifactId>
+  <packaging>jar</packaging>
+  <name>java-musbands.admin.users</name>
+  <description>Musbands Admin Users. Manage users from access to API.</description>
+  <url>https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands.admin.user</url>
+
+  <properties>
+    <main.basedir>${basedir}/../</main.basedir>
+    <java-module-name>musbands.admin.users</java-module-name>
+  </properties>
+
+  <dependencies>
+  	<!-- Dependecies for spring boot starter module -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-configuration-processor</artifactId>
+		<optional>true</optional>
+		<version>${spring-boot.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-autoconfigure-processor</artifactId>
+		<optional>true</optional>
+		<version>${spring-boot.version}</version>
+	</dependency>
+	<!-- Core API Framework Libraries -->
+    <dependency>
+		<groupId>org.sylrsykssoft</groupId>
+		<artifactId>coreapi-framework.security</artifactId>
+		<version>${coreapi-framework.security.version}</version>
+	</dependency>
+  </dependencies>
+</project>

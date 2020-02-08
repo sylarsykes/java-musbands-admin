@@ -151,6 +151,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.sylrsykssoft</groupId>
+	    	<artifactId>coreapi-framework.security</artifactId>
+	    	<version>${coreapi-framework.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sylrsykssoft</groupId>
 	    	<artifactId>coreapi-framework.web</artifactId>
 	    	<version>${coreapi-framework.web.version}</version>
 		</dependency>
@@ -195,5 +200,6 @@
     	<module>java-musbands-admin.client</module>
     	<!-- <module>java-musbands-admin.application</module> -->
 		<!-- <module>java-musbands-admin.application.test</module> -->
+    	<module>java-musbands-admin.users</module>
   </modules>
 </project>
