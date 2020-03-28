@@ -54,7 +54,7 @@ public class MusbandsAdminUserResource extends BaseUserResource<Long> implements
 	 * @param lastOnline
 	 * @param authorities
 	 * 
-	 * @see org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.REPOSITORY_BUILDER_NAME
+	 * @see org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.REPOSITORY_BUILDER_NAME
 	 */
 	@Builder(builderMethodName = "musbandsAdminUsersResourceBuilder")
 	@ConstructorProperties({ "entityId", "username", "password", "enabled", "accountNonExpired",

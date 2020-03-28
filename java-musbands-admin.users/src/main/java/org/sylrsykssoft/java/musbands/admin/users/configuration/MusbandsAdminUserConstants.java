@@ -10,7 +10,7 @@ import static org.sylrsykssoft.coreapi.framework.web.configuration.BaseAdminCons
  * @author juan.gonzalez.fernandez.jgf
  *
  */
-public final class MusbandsAdminUsersConstants {
+public final class MusbandsAdminUserConstants {
 	// CACHE //
 	public static final String CACHE_NAME = "${musbands.admin.cache.cache-name}";
 	public static final String CACHE_MANGER_BEAN_NAME = "${musbands.admin.cache.cache-manager}";
@@ -39,14 +39,14 @@ public final class MusbandsAdminUsersConstants {
 	public static final String CONTROLLER_DELETE_DELETE = "/{id}";
 
 	// MAPPER //
-	public static final String MAPPER_RESOURCE_FUNCTION = "musbandsAdminUsersMapperToResourceFunction";
-	public static final String MAPPER_RESOURCE_ASSEMBLER = "musbandsAdminUsersResourceAssembler";
-	public static final String MAPPER_ENTITY_FUNCTION = "musbandsAdminUsersMapperToEntityFunction";
+	public static final String MAPPER_RESOURCE_FUNCTION = "musbandsAdminUserMapperToResourceFunction";
+	public static final String MAPPER_RESOURCE_ASSEMBLER = "musbandsAdminUserResourceAssembler";
+	public static final String MAPPER_ENTITY_FUNCTION = "musbandsAdminUserMapperToEntityFunction";
 
 	// REPOSITORY //
 	public static final String REPOSITORY_REST_COLLECTION_RESOURCE_REL = CONTROLLER_REQUEST_NAME;
 	public static final String REPOSITORY_REST_RESOURCE_PATH = CONTROLLER_REQUEST_NAME;
-	public static final String REPOSITORY_NAME = "musbandsAdminUsersRepository";
+	public static final String REPOSITORY_NAME = "musbandsAdminUserRepository";
 	public static final String REPOSITORY_TABLE_NAME = "musbands_admin_user";
 	public static final String REPOSITORY_ENTITY_NAME = "musbandsAdminUser";
 	public static final String REPOSITORY_BUILDER_NAME = "musbandsAdminUsersBuilder";
@@ -68,7 +68,7 @@ public final class MusbandsAdminUsersConstants {
 	 * should be prevented from constructing objects of this class, by declaring
 	 * this private constructor.
 	 */
-	private MusbandsAdminUsersConstants() {
+	private MusbandsAdminUserConstants() {
 		throw new AssertionError();
 	}
 

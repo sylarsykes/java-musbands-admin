@@ -2,13 +2,14 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d2874b795fea4cfba2f7df1e13621ab2)](https://www.codacy.com/app/juan.gonzalez.fernandez.jgf/java-musbands-admin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sylarsykes/java-musbands-admin&amp;utm_campaign=Badge_Grade)
 
-Musbands Admin it is an API Rest with the administration of the master entities for [Musbands API Rest](https://github.com/sylarsykes/java-musbands). It is composed of the modules [Function Member](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.function-member), [Instument](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.instrument), [Musical Genre](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.musical-genre), [Application](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.application), [Client](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.client).
+Musbands Admin it is an API Rest with the administration of the master entities for [Musbands API Rest](https://github.com/sylarsykes/java-musbands). It is composed of the modules [Function Member](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.function-member), [Instument](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.instrument), [Musical Genre](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.musical-genre), [Musbands Admin User](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.users), [Application](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.application), [Client](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.client).
 
 
 ## Features
 *  [Function Member](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.function-member) Function Member API. Describe the function of a band member.
 *  [Instrument](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.instrument) Instrument API. Describe the instrument of a band member.
 *  [Musical Genre](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.musical-genre) Musical Genre API. Describe the musical genre of the bands.
+*  [Musbands Admin User](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.users) Users API. Describe the users managemnt.
 *  [Application](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.application) Spring Boot Application
 *  [Client](https://github.com/sylarsykes/java-musbands-admin/tree/master/java-musbands-admin.client) Rest Template Client for connect to Function Member, Instrument, Musical Genre APIs.
 
@@ -76,6 +77,7 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 *  [Maven](https://mvnrepository.com/) Dependency manager
 *  [Core API Framework](https://github.com/sylarsykes/coreapi-framework)
 *  [Spring Framework](https://github.com/spring-projects/spring-framework)
+*  [Spring Security](https://spring.io/projects/spring-security)
 *  [Apache Commons](https://github.com/apache/commons-lang)
 *  [Apache Commons Collections](https://github.com/apache/commons-collections/)
 *  [Lombok](https://projectlombok.org/)
@@ -95,7 +97,7 @@ Musbands Admin it is an API Rest with the administration of the master entities 
 ## Related projects
 
 -  [Musbands](https://github.com/sylarsykes/java-musbands)
-
+-  [Musbands Admin Web](https://github.com/sylarsykes/react-musbands-admin)
 
 ## License
 

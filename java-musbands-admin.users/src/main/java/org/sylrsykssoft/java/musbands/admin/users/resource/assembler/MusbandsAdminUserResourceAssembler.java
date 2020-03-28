@@ -1,6 +1,6 @@
 package org.sylrsykssoft.java.musbands.admin.users.resource.assembler;
 
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.MAPPER_RESOURCE_FUNCTION;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.MAPPER_RESOURCE_FUNCTION;
 
 import java.beans.ConstructorProperties;
 

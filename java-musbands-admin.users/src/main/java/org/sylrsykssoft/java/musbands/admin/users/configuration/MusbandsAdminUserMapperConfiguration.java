@@ -1,8 +1,8 @@
 package org.sylrsykssoft.java.musbands.admin.users.configuration;
 
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.MAPPER_ENTITY_FUNCTION;
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.MAPPER_RESOURCE_ASSEMBLER;
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.MAPPER_RESOURCE_FUNCTION;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.MAPPER_ENTITY_FUNCTION;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.MAPPER_RESOURCE_ASSEMBLER;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.MAPPER_RESOURCE_FUNCTION;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
