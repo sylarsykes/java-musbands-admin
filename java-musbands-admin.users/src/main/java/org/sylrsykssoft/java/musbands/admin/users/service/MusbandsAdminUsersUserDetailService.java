@@ -1,8 +1,8 @@
 package org.sylrsykssoft.java.musbands.admin.users.service;
 
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.MAPPER_ENTITY_FUNCTION;
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.MAPPER_RESOURCE_ASSEMBLER;
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.SERVICE_NAME;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.MAPPER_ENTITY_FUNCTION;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.MAPPER_RESOURCE_ASSEMBLER;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.SERVICE_NAME;
 
 import java.util.Collection;
 import java.util.List;
@@ -16,9 +16,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.sylrsykssoft.coreapi.framework.library.mapper.IMapperFunction;
 import org.sylrsykssoft.coreapi.framework.library.mapper.ModelMapperFunction;
+import org.sylrsykssoft.coreapi.framework.library.util.LoggerUtil;
+import org.sylrsykssoft.coreapi.framework.library.util.LoggerUtil.LogMessageLevel;
 import org.sylrsykssoft.coreapi.framework.security.service.IBaseUserUserDetailsService;
 import org.sylrsykssoft.java.musbands.admin.users.domain.MusbandsAdminUser;
-import org.sylrsykssoft.java.musbands.admin.users.repository.MusbandsAdminUsersRepository;
+import org.sylrsykssoft.java.musbands.admin.users.repository.MusbandsAdminUserRepository;
 import org.sylrsykssoft.java.musbands.admin.users.resource.MusbandsAdminUserResource;
 import org.sylrsykssoft.java.musbands.admin.users.resource.assembler.MusbandsAdminUserResourceAssembler;
 
@@ -33,7 +35,7 @@ implements IBaseUserUserDetailsService<MusbandsAdminUser, MusbandsAdminUserResou
 IMapperFunction<MusbandsAdminUser, MusbandsAdminUserResource> {
 
 	@Autowired
-	private MusbandsAdminUsersRepository userRepository;
+	private MusbandsAdminUserRepository userRepository;
 
 	/** Mapper resource bean */
 	@Autowired
@@ -52,13 +54,16 @@ IMapperFunction<MusbandsAdminUser, MusbandsAdminUserResource> {
 	public Collection<MusbandsAdminUserResource> findAll() {
 		final List<MusbandsAdminUser> musbandAdminUsers = getUserRepository().findAll();
 
+		LoggerUtil.message(LogMessageLevel.INFO, "MusbandsAdminUsersUserDetailService::findAll Found {} entries.",
+				musbandAdminUsers);
+
 		return musbandAdminUsers.stream().map(mapperToResource()::toResource).collect(Collectors.toList());
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public MusbandsAdminUsersRepository getUserRepository() {
+	public MusbandsAdminUserRepository getUserRepository() {
 		return userRepository;
 	}
 
@@ -68,8 +73,14 @@ IMapperFunction<MusbandsAdminUser, MusbandsAdminUserResource> {
 	public Collection<MusbandsAdminUserResource> loadByName(final String name) throws UsernameNotFoundException {
 		final Collection<MusbandsAdminUser> musbandsAdminUsers = getUserRepository().findByName(name);
 
-		if (musbandsAdminUsers.isEmpty())
+		LoggerUtil.message(LogMessageLevel.INFO, "MusbandsAdminUsersUserDetailService::loadByName Found {} entries.",
+				musbandsAdminUsers);
+
+		if (musbandsAdminUsers.isEmpty()) {
+			LoggerUtil.message(LogMessageLevel.WARN,
+					"MusbandsAdminUsersUserDetailService::loadByName Not found users.");
 			throw new UsernameNotFoundException(name);
+		}
 
 		return musbandsAdminUsers.stream().map(mapperToResource()::toResource).collect(Collectors.toList());
 	}
@@ -79,10 +90,20 @@ IMapperFunction<MusbandsAdminUser, MusbandsAdminUserResource> {
 	 */
 	@Override
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
+		LoggerUtil.message(LogMessageLevel.WARN,
+				"MusbandsAdminUsersUserDetailService::loadUserByUsername Find user with username {}.", username);
+
 		final MusbandsAdminUser musbandsAdminUser = getUserRepository().findByUsername(username);
 
-		if (musbandsAdminUser == null)
+		LoggerUtil.message(LogMessageLevel.INFO,
+				"MusbandsAdminUsersUserDetailService::loadUserByUsername Found {} entry.", musbandsAdminUser);
+
+		if (musbandsAdminUser == null) {
+			LoggerUtil.message(LogMessageLevel.WARN,
+					"MusbandsAdminUsersUserDetailService::loadUserByUsername Not found user with username {}.",
+					username);
 			throw new UsernameNotFoundException(username);
+		}
 
 		return mapperToResource().toResource(musbandsAdminUser);
 	}
@@ -93,10 +114,21 @@ IMapperFunction<MusbandsAdminUser, MusbandsAdminUserResource> {
 	@Override
 	public UserDetails loadUserByUsername(final String username, final boolean enabled)
 			throws UsernameNotFoundException {
+		LoggerUtil.message(LogMessageLevel.WARN,
+				"MusbandsAdminUsersUserDetailService::loadUserByUsername Find user with username {} and enabled {}.",
+				username, enabled);
+
 		final MusbandsAdminUser musbandsAdminUser = getUserRepository().findByUsernameAndEnabled(username, enabled);
 
-		if (musbandsAdminUser == null)
+		LoggerUtil.message(LogMessageLevel.INFO,
+				"MusbandsAdminUsersUserDetailService::loadUserByUsername Found {} entry.", musbandsAdminUser);
+
+		if (musbandsAdminUser == null) {
+			LoggerUtil.message(LogMessageLevel.WARN,
+					"MusbandsAdminUsersUserDetailService::loadUserByUsername Not found user with username {}.",
+					username);
 			throw new UsernameNotFoundException(username);
+		}
 
 		return mapperToResource().toResource(musbandsAdminUser);
 	}

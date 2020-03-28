@@ -1,7 +1,7 @@
 package org.sylrsykssoft.java.musbands.admin.users.domain;
 
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.REPOSITORY_ENTITY_NAME;
-import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUsersConstants.REPOSITORY_TABLE_NAME;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.REPOSITORY_ENTITY_NAME;
+import static org.sylrsykssoft.java.musbands.admin.users.configuration.MusbandsAdminUserConstants.REPOSITORY_TABLE_NAME;
 
 import java.util.Set;
 

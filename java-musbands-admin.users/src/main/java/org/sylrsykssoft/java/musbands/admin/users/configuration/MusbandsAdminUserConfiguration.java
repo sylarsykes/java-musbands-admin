@@ -19,6 +19,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 	"org.sylrsykssoft.coreapi.framework.web.*", "org.sylrsykssoft.java.musbands.admin.users.*" })
 @EnableJpaRepositories(basePackages = {
 		"org.sylrsykssoft.java.musbands.admin.users.repository" }, repositoryFactoryBeanClass = EnversRevisionRepositoryFactoryBean.class)
-public class MusbandsAdminUsersConfiguration {
+public class MusbandsAdminUserConfiguration {
 
 }
